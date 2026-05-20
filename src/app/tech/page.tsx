@@ -47,7 +47,7 @@ export default function Tech() {
       <section style={{ background: "#0a0a0c", color: "#ffffff", padding: "80px 0", textAlign: "center", position: "relative" }}>
         <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px" }}>The Platform</span>
-          <h1 style={{ fontSize: "3.2rem", fontWeight: 800, marginTop: "10px" }}>BOOSTER Technology</h1>
+          <h1 style={{ fontSize: "clamp(1.8rem, 6vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>BOOSTER Technology</h1>
           <p style={{ fontSize: "1.2rem", color: "#cbd5e1", maxWidth: "700px", margin: "20px auto 0 auto", lineHeight: "1.6" }}>
             A Paradigm Shift in Serum Production: From raw animal extraction to programmable extracellular signaling platforms.
           </p>
@@ -73,15 +73,15 @@ export default function Tech() {
         <div className="section-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Process Workflow</span>
-            <h2 style={{ fontSize: "2.6rem", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
+            <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
               Streamlined 3-Step Booster Production
             </h2>
           </div>
 
           {/* Horizontal Pipeline Cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", position: "relative", marginBottom: "40px" }}>
+          <div className="tech-steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", position: "relative", marginBottom: "40px" }}>
             {/* Connector Line */}
-            <div style={{
+            <div className="tech-connector-line" style={{
               position: "absolute",
               top: "52px",
               left: "calc(16.66% + 12px)",
@@ -175,7 +175,7 @@ export default function Tech() {
             boxShadow: "0 20px 40px rgba(0,0,0,0.02)",
             transition: "all 0.3s"
           }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", alignItems: "start" }}>
+            <div className="tech-detail-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", alignItems: "start" }}>
               <div>
                 <span style={{ color: "var(--accent-red)", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}>Step {activeStep + 1} Detail</span>
                 <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 16px 0" }}>
@@ -199,17 +199,17 @@ export default function Tech() {
       {/* Extracellular Vesicles (EVs) */}
       <section style={{ background: "#121214", color: "#ffffff", padding: "100px 0" }}>
         <div className="section-container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "center" }}>
+          <div className="tech-ev-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px", alignItems: "center" }}>
             <div>
               <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>The Signaling Unit</span>
-              <h2 style={{ fontSize: "2.8rem", fontWeight: 800, color: "#ffffff", margin: "10px 0 24px 0" }}>
+              <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, color: "#ffffff", margin: "10px 0 24px 0" }}>
                 Extracellular Vesicles (EVs)
               </h2>
               <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: "1.6", marginBottom: "30px" }}>
                 Cells communicate and regulate biological responses via extracellular vesicles (EVs). Membrane-bound particles released by cells carry proteins, RNA, lipids, and other signaling cargo.
               </p>
               
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+              <div className="tech-stats-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
                 <div style={{ background: "rgba(255,255,255,0.04)", padding: "20px", borderRadius: "12px" }}>
                   <h4 style={{ color: "var(--accent-red)", fontSize: "1.5rem", fontWeight: 800 }}>Nano-to-Micron</h4>
                   <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>EVs span a broad nano-to-micron size range</p>
@@ -249,10 +249,10 @@ export default function Tech() {
       {/* Scientific Rationale & Mechanistic Basis */}
       <section style={{ padding: "100px 0" }}>
         <div className="section-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "60px", alignItems: "center" }}>
+          <div className="tech-mechanism-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "60px", alignItems: "center" }}>
             <div>
               <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Mechanism of Action</span>
-              <h2 style={{ fontSize: "2.6rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 20px 0" }}>
+              <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 20px 0" }}>
                 Scientific Rationale & Mechanistic Basis
               </h2>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "20px" }}>
@@ -301,12 +301,12 @@ export default function Tech() {
         <div className="section-container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>The Standard Matrix</span>
-            <h2 style={{ fontSize: "2.6rem", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
+            <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
               Competitive Technical Landscape
             </h2>
           </div>
 
-          <div style={{ overflowX: "auto", borderRadius: "20px", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 15px 40px rgba(0,0,0,0.02)" }}>
+          <div className="tech-table-wrap" style={{ overflowX: "auto", borderRadius: "20px", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 15px 40px rgba(0,0,0,0.02)", WebkitOverflowScrolling: "touch" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", background: "#ffffff", textAlign: "left" }}>
               <thead>
                 <tr style={{ background: "#121214", color: "#ffffff" }}>

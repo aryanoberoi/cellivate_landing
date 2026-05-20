@@ -3273,3 +3273,311 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 14px 32px rgba(217, 35, 52, 0.35);
 }
+
+/* ==========================================================================
+   MOBILE HAMBURGER NAV
+   ========================================================================== */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-line {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--brand-dark);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+.line-open-1 { transform: translateY(7px) rotate(45deg); }
+.line-open-2 { opacity: 0; transform: scaleX(0); }
+.line-open-3 { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+.mobile-nav-links {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(250, 248, 245, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px 24px 24px;
+    gap: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-nav-link {
+    font-family: var(--font-sans), sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--brand-dark);
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(217, 35, 52, 0.06);
+    color: var(--accent-red);
+}
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+/* Tablet — hide desktop nav, show hamburger */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    /* Hero section height */
+    .hero-section {
+        height: auto;
+        min-height: calc(100vh - 80px);
+        padding-bottom: 40px;
+    }
+
+    /* Problem / section headings */
+    .problem-section h2,
+    .why-problem-section h2,
+    .solution-section h2,
+    .product-section h2 {
+        font-size: 2rem !important;
+    }
+
+    /* Problem section padding */
+    .problem-section,
+    .why-problem-section,
+    .solution-section,
+    .product-section {
+        padding: 60px 0 !important;
+    }
+
+    /* Solution layout — stack on mobile */
+    .solution-layout {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    /* About page vision grid */
+    .about-vision-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    /* Footer main grid in layout */
+    .footer-main-grid {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    /* About page team group photo */
+    .about-team-photo {
+        height: 260px !important;
+    }
+
+    /* About page section paddings */
+    .section-container {
+        gap: 40px;
+    }
+
+    /* Inline section padding overrides */
+    section[style*="padding: 100px 0"],
+    section[style*="padding: \"100px 0\""] {
+        padding: 60px 0 !important;
+    }
+
+    /* Inline problem quote text */
+    p[style*="font-size: 1.6rem"] {
+        font-size: 1.1rem !important;
+    }
+
+    /* Feature grid on home page */
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Pilot / Contact page top padding */
+    .page-two-col-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    /* Tech page — section paddings on dark sections */
+    .tech-ev-grid,
+    .tech-mechanism-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+}
+
+/* ==========================================================================
+   SUBPAGE — TECHNOLOGY
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .tech-steps-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    .tech-connector-line {
+        display: none !important;
+    }
+
+    .tech-detail-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    .tech-ev-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+
+    .tech-stats-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .tech-mechanism-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Competitive table — always scrollable, but improve on mobile */
+.tech-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 20px;
+}
+
+/* Hero banners on subpages */
+@media (max-width: 768px) {
+    section[style*="padding: \"80px 0\""],
+    section[style*='padding: "80px 0"'] {
+        padding: 50px 0 !important;
+    }
+
+    h1[style*="3.2rem"] {
+        font-size: 2rem !important;
+    }
+
+    h2[style*="2.6rem"],
+    h2[style*="2.8rem"] {
+        font-size: 1.8rem !important;
+    }
+
+    /* Page-level paddings (pilot, contact, resources) */
+    main[style*="padding: 80px 0"] {
+        padding: 40px 0 !important;
+    }
+}
+
+/* ==========================================================================
+   SUBPAGE — PILOT & CONTACT (shared two-col layout)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .page-two-col-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+}
+
+/* ==========================================================================
+   SUBPAGE — RESOURCES (book viewer)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Navigation row for book */
+    .resources-nav-row {
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: stretch !important;
+    }
+
+    .resources-nav-row button,
+    .resources-nav-row .btn-prev-spread,
+    .resources-nav-row .btn-next-spread {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 16px !important;
+    }
+
+    /* Hero title clamp override */
+    .hero-title {
+        font-size: 2rem !important;
+    }
+
+    /* Section container padding */
+    .section-container {
+        padding: 0 16px !important;
+    }
+
+    /* About page team photo */
+    .about-team-photo {
+        height: 220px !important;
+    }
+
+    /* Footer email/phone — allow wrapping */
+    .footer-main-grid a[style*="font-size: 1.25rem"] {
+        font-size: 1rem !important;
+        word-break: break-all;
+    }
+
+    /* Inline problem section container padding */
+    .problem-section .section-container,
+    .why-problem-section .section-container {
+        padding: 0 16px !important;
+    }
+
+    /* Inline quote box padding */
+    div[style*="padding: 40px"][style*="borderRadius: 24px"] {
+        padding: 24px 16px !important;
+    }
+}

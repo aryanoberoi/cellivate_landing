@@ -225,8 +225,8 @@ export default function Home() {
             <div className="solution-media" style={{ display: "flex", justifyContent: "center" }}>
               <div style={{ position: "relative", width: "100%", maxWidth: "420px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.08)" }}>
                 <img 
-                  src="/extracted_images/booster_visual.png" 
-                  alt="BOOSTER Vial visual" 
+                  src="https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/b71c154e-2a3f-46b2-afad-b6e02805631e/CVT_Booster-Image.png?format=2500w"
+                  alt="BOOSTER Vial visual"
                   style={{ width: "100%", display: "block" }} 
                 />
               </div>

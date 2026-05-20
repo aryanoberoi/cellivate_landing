@@ -72,7 +72,7 @@ export default function About() {
       <section style={{ background: "#0a0a0c", color: "#ffffff", padding: "80px 0", textAlign: "center", position: "relative" }}>
         <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px" }}>The Company</span>
-          <h1 style={{ fontSize: "3.2rem", fontWeight: 800, marginTop: "10px" }}>About Cellivate</h1>
+          <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>About Cellivate</h1>
           <p style={{ fontSize: "1.2rem", color: "#cbd5e1", maxWidth: "700px", margin: "20px auto 0 auto", lineHeight: "1.6" }}>
             Revolutionising Cell-Based Solutions for a Sustainable Future.
           </p>
@@ -96,7 +96,7 @@ export default function About() {
       {/* Vision & Mission */}
       <section style={{ padding: "100px 0" }}>
         <div className="section-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "60px", alignItems: "center" }}>
+          <div className="about-vision-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "60px", alignItems: "center" }}>
             <div>
               <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Vision Statement</span>
               <h2 style={{ fontSize: "2.4rem", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px", marginBottom: "20px" }}>
@@ -138,7 +138,7 @@ export default function About() {
       {/* Team Group Picture Banner */}
       <section style={{ padding: "0 0 100px 0" }}>
         <div className="section-container">
-          <div style={{ position: "relative", width: "100%", height: "500px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.05)" }}>
+          <div className="about-team-photo" style={{ position: "relative", width: "100%", height: "500px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.05)" }}>
             <img 
               src="https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/53ecd113-b160-44d3-87fc-559829b2d895/IMG_5079.jpg" 
               alt="Cellivate Team Group Photo" 

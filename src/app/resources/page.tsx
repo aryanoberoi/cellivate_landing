@@ -86,7 +86,7 @@ export default function Resources() {
         <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>
           Ebook & Decks
         </span>
-        <h1 style={{ fontSize: "3.2rem", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
+        <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
           Cellivate Technical Deck
         </h1>
         <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", maxWidth: "600px", margin: "16px auto 0 auto", lineHeight: "1.6" }}>
@@ -248,7 +248,7 @@ export default function Resources() {
           </div>
 
           {/* Navigation buttons */}
-          <div style={{ display: "flex", gap: "20px", marginTop: "40px", alignItems: "center", zIndex: 10 }}>
+          <div className="resources-nav-row" style={{ display: "flex", gap: "20px", marginTop: "40px", alignItems: "center", zIndex: 10, flexWrap: "wrap", justifyContent: "center" }}>
             <button
               onClick={handlePrev}
               disabled={currentPage === 0}

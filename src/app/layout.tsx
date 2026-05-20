@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -60,7 +61,7 @@ export default function RootLayout({
               </div>
             </Link>
             
-            <nav className="nav-menu" style={{ display: "flex", gap: "30px", alignItems: "center" }}>
+            <nav className="nav-menu desktop-nav" style={{ display: "flex", gap: "30px", alignItems: "center" }}>
               <Link href="/tech" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Technology</Link>
               <Link href="/pilot" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Pilot Program</Link>
               <Link href="/about" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>About</Link>
@@ -68,8 +69,7 @@ export default function RootLayout({
               <Link href="/resources" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Resources</Link>
             </nav>
 
-            <div className="nav-actions">
-            </div>
+            <MobileNav />
           </div>
         </header>
 
@@ -89,7 +89,7 @@ export default function RootLayout({
         {/* Global Footer */}
         <footer className="footer-section" style={{ background: "#ffffff", borderTop: "1px solid rgba(0,0,0,0.08)", padding: "80px 0 60px 0", color: "var(--brand-dark)", zIndex: 10, position: "relative" }}>
           <div className="section-container" style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr 1.5fr", gap: "60px", alignItems: "start" }}>
+            <div className="footer-main-grid" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr 1.5fr", gap: "60px", alignItems: "start" }}>
               
               {/* Column 1: Brand & Logo */}
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
