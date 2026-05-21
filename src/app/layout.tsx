@@ -100,24 +100,9 @@ export default function RootLayout({
                   Revolutionising Cell-Based Solutions for a Sustainable Future. Providing high-performance, animal-free biological inputs.
                 </p>
                 <div style={{ display: "flex", gap: "16px", color: "var(--brand-dark)" }}>
-                  <a href="https://www.linkedin.com/company/cellivate-technologies/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ color: "inherit", transition: "color 0.2s" }}>
+                  <a href="https://www.linkedin.com/company/cellivate-technologies/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={{ color: "inherit", transition: "color 0.2s" }}>
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </a>
-                  <a href="https://www.facebook.com/CellivateTechnologies" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: "inherit", transition: "color 0.2s" }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
-                    </svg>
-                  </a>
-                  <a href="https://twitter.com/CellivateTech" target="_blank" rel="noopener noreferrer" aria-label="Twitter" style={{ color: "inherit", transition: "color 0.2s" }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                  </a>
-                  <a href="https://www.youtube.com/channel/UChqGWOgXIiBl_H6RWpBqCfQ" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style={{ color: "inherit", transition: "color 0.2s" }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                     </svg>
                   </a>
                 </div>
@@ -152,10 +137,27 @@ export default function RootLayout({
                   </div>
                   
                   <div>
-                    <span style={{ display: "block", fontSize: "0.85rem", color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "4px" }}>Corporate Address</span>
-                    <p style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--brand-primary)", margin: 0, lineHeight: "1.4", whiteSpace: "pre-line" }}>
-                      160 Robinson Road #14-04{"\n"}Singapore 068914
-                    </p>
+                    <span style={{ display: "block", fontSize: "0.85rem", color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "6px" }}>Our Offices</span>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                      <div>
+                        <span style={{ fontSize: "0.75rem", color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>Singapore (HQ)</span>
+                        <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--brand-primary)", margin: 0, lineHeight: "1.3" }}>
+                          160 Robinson Rd, #14-04,<br />Singapore 068914
+                        </p>
+                      </div>
+                      <div>
+                        <span style={{ fontSize: "0.75rem", color: "#3b2e9a", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>Australia Subsidiary</span>
+                        <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--brand-primary)", margin: 0, lineHeight: "1.3" }}>
+                          2302 118 Kavanagh St.<br />Southbank VIC 3006
+                        </p>
+                      </div>
+                      <div>
+                        <span style={{ fontSize: "0.75rem", color: "#10b981", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px", display: "block", marginBottom: "2px" }}>India</span>
+                        <p style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--brand-primary)", margin: 0, lineHeight: "1.3", fontStyle: "italic" }}>
+                          Coming Soon
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
