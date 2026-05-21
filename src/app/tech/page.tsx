@@ -7,21 +7,11 @@ export default function Tech() {
 
   const steps = [
     {
-      title: "Precondition Donor Cells",
-      shortDesc: "Proprietary electromagnetic stimulation to prime EV release",
-      desc: "This proprietary stimulation step is designed to increase release of EV-rich, bioactive conditioned media.",
-      detail: "Our proprietary electromagnetic stimulation activates survival and stress-adaptation pathways, driving controlled mitochondrial responses that reshape how donor cells package bioactive cargo into extracellular vesicles and release them into the culture media.",
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-        </svg>
-      )
-    },
-    {
-      title: "Generate EV-Enriched Conditioned Media",
-      shortDesc: "Donor cells release bioactive signaling factors into the media",
-      desc: "Donor cells release EV-rich and protein-rich signaling factors into the media, producing a high-yield bioactive output ready for downstream processing.",
-      detail: "Instead of raw nutrients, we focus on instructing cells. The cells behave naturally, secreting both growth-promoting signals and functional proteins into the conditioned media environment.",
+      title: "Get Cells",
+      shortDesc: "from numerous sources like cell banks, off the shelf, etc",
+      desc: "We source high-quality donor cells from established cell banks, off-the-shelf vials, or other qualified repositories.",
+      detail: "Sourcing healthy, standardized donor cells from cell banks or off-the-shelf configurations ensures a robust and compliant biological starting material for Booster production.",
+      image: "/extracted_images/cell_banking_vials.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path>
@@ -29,10 +19,23 @@ export default function Tech() {
       )
     },
     {
+      title: "Magnetic Stimulation",
+      shortDesc: "Proprietary electromagnetic stimulation to prime EV release",
+      desc: "Priming cells within our customized electromagnetic field technology chamber to boost signaling factor secretion.",
+      detail: "Our proprietary electromagnetic field technology primes cells to trigger specific physiological responses. This cellular activation drives controlled mitochondrial responses, stimulating cells to package growth factors and signaling cues into extracellular vesicles.",
+      image: "/extracted_images/magnetic_stimulation_chamber.png",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+        </svg>
+      )
+    },
+    {
       title: "Clarify, Characterize, and Formulate",
       shortDesc: "Filter, analyze, and stabilize the final formulation",
       desc: "Filter the conditioned media and characterize particle-rich output using orthogonal analytics, including NTA.",
-      detail: "We add stabilizer additives to guarantee batch consistency. The final output is a completely animal-free, chemically defined bio-signal cocktail ready for target applications.",
+      detail: "We introduce proprietary stabilizer additives to guarantee output stability, batch-to-batch consistency, and complete reproducibility. This ensures that the final formulation is highly optimized for primary cell-based workflows and downstream biomanufacturing.",
+      image: "/extracted_images/booster_formulation.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -47,9 +50,9 @@ export default function Tech() {
       <section style={{ background: "#0a0a0c", color: "#ffffff", padding: "80px 0", textAlign: "center", position: "relative" }}>
         <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px" }}>The Platform</span>
-          <h1 style={{ fontSize: "clamp(1.8rem, 6vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>BOOSTER Technology</h1>
+          <h1 style={{ fontSize: "clamp(1.8rem, 6vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>The technology that powers our Booster production</h1>
           <p style={{ fontSize: "1.2rem", color: "#cbd5e1", maxWidth: "700px", margin: "20px auto 0 auto", lineHeight: "1.6" }}>
-            A Paradigm Shift in Serum Production: From raw animal extraction to programmable extracellular signaling platforms.
+            From raw animal extraction to programmable extracellular signaling platforms.
           </p>
         </div>
         <div 
@@ -175,21 +178,50 @@ export default function Tech() {
             boxShadow: "0 20px 40px rgba(0,0,0,0.02)",
             transition: "all 0.3s"
           }}>
-            <div className="tech-detail-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "40px", alignItems: "start" }}>
-              <div>
-                <span style={{ color: "var(--accent-red)", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}>Step {activeStep + 1} Detail</span>
-                <h3 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--brand-primary)", margin: "10px 0 16px 0" }}>
-                  {steps[activeStep].title}
-                </h3>
-                <p style={{ color: "var(--brand-light)", fontSize: "1.05rem", lineHeight: "1.6" }}>
-                  {steps[activeStep].desc}
-                </p>
+            <style dangerouslySetInnerHTML={{__html: `
+              @keyframes fadeInUp {
+                from {
+                  opacity: 0;
+                  transform: translateY(12px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+              .fade-in-up {
+                animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+              }
+            `}} />
+            <div 
+              key={activeStep}
+              className="fade-in-up tech-detail-grid" 
+              style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "40px", alignItems: "center" }}
+            >
+              <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+                <div>
+                  <span style={{ color: "var(--accent-red)", fontWeight: 700, fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "1px" }}>Step {activeStep + 1} Detail</span>
+                  <h3 style={{ fontSize: "1.6rem", fontWeight: 800, color: "var(--brand-primary)", margin: "8px 0 12px 0" }}>
+                    {steps[activeStep].title}
+                  </h3>
+                  <p style={{ color: "var(--brand-light)", fontSize: "1.02rem", lineHeight: "1.5", margin: 0 }}>
+                    {steps[activeStep].desc}
+                  </p>
+                </div>
+                <div style={{ background: "var(--bg-secondary)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid var(--accent-red)" }}>
+                  <span style={{ fontWeight: 700, color: "var(--brand-primary)", display: "block", marginBottom: "6px", fontSize: "0.9rem" }}>BIOLOGICAL ENGINE:</span>
+                  <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.55", margin: 0 }}>
+                    {steps[activeStep].detail}
+                  </p>
+                </div>
               </div>
-              <div style={{ background: "var(--bg-secondary)", padding: "24px", borderRadius: "16px", borderLeft: "4px solid var(--accent-red)" }}>
-                <span style={{ fontWeight: 700, color: "var(--brand-primary)", display: "block", marginBottom: "8px", fontSize: "0.9rem" }}>BIOLOGICAL ENGINE:</span>
-                <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.6", margin: 0 }}>
-                  {steps[activeStep].detail}
-                </p>
+              
+              <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 12px 30px rgba(0,0,0,0.04)" }}>
+                <img 
+                  src={(steps[activeStep] as any).image} 
+                  alt={steps[activeStep].title} 
+                  style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} 
+                />
               </div>
             </div>
           </div>
@@ -201,7 +233,7 @@ export default function Tech() {
         <div className="section-container">
           <div className="tech-ev-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "48px", alignItems: "center" }}>
             <div>
-              <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>The Signaling Unit</span>
+              <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Our secret Sauce</span>
               <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, color: "#ffffff", margin: "10px 0 24px 0" }}>
                 Extracellular Vesicles (EVs)
               </h2>
@@ -221,26 +253,18 @@ export default function Tech() {
               </div>
             </div>
 
-            <div style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.08)", padding: "40px", borderRadius: "24px" }}>
-              <h3 style={{ fontSize: "1.4rem", fontWeight: 700, color: "#ffffff", marginBottom: "20px" }}>Cell Signaling Realities</h3>
-              
-              <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-                <div style={{ display: "flex", gap: "16px" }}>
-                  <div style={{ width: "32px", height: "32px", background: "rgba(239, 68, 68, 0.2)", borderRadius: "50%", display: "flex", alignItems: "center", color: "#f87171", fontWeight: 700, flexShrink: 0, justifyContent: "center" }}>!</div>
-                  <div>
-                    <h4 style={{ fontWeight: 600, color: "#ffffff" }}>Stressed Cells = Stress Signals</h4>
-                    <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "2px" }}>Conventional serum draws are fraught with slaughterhouse stress, forcing cells to secrete toxic, apoptotic signals that impair laboratory cultures.</p>
-                  </div>
-                </div>
-
-                <div style={{ display: "flex", gap: "16px" }}>
-                  <div style={{ width: "32px", height: "32px", background: "rgba(16, 185, 129, 0.2)", borderRadius: "50%", display: "flex", alignItems: "center", color: "#34d399", fontWeight: 700, flexShrink: 0, justifyContent: "center" }}>✓</div>
-                  <div>
-                    <h4 style={{ fontWeight: 600, color: "#ffffff" }}>Happy Cells = Happy Signals</h4>
-                    <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "2px" }}>Under our customized electromagnetic stimulation chamber, donor cells secrete high concentrations of growth-promoting, regenerative signals.</p>
-                  </div>
-                </div>
-              </div>
+            <div style={{ position: "relative", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(255, 255, 255, 0.08)", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", aspectRatio: "16/9", display: "flex", justifyContent: "center" }}>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              >
+                <source src="/boomerang_loop.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(18, 18, 20, 0.4), transparent)", pointerEvents: "none" }} />
             </div>
           </div>
         </div>
@@ -256,14 +280,14 @@ export default function Tech() {
                 Scientific Rationale & Mechanistic Basis
               </h2>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "20px" }}>
-                Our PEMF (Pulsed Electromagnetic Field) technology induces <strong>mitohormesis</strong> (mitochondrial survival adaptations). This promotes mitochondriogenesis and reduces apoptosis.
+                Our electromagnetic field technology induces <strong>mitohormesis</strong> (mitochondrial survival adaptations). This promotes mitochondriogenesis and reduces apoptosis.
               </p>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "24px" }}>
                 Specifically, magnetic modulation activates a calcium-mitochondrial axis via the <strong>TRPC1</strong> (Transient Receptor Potential Canonical 1) channel. This stimulates cellular respiration and co-activates PGC-1α transcription, generating high secretome output containing vital proteins and bio-active molecules.
               </p>
               
               <div style={{ borderLeft: "4px solid var(--accent-red)", paddingLeft: "20px", fontStyle: "italic", color: "var(--brand-light)" }}>
-                "PEMF stimulation triggers extracellular vesicle release, creating an ideal cell-derived substrate for muscle, cartilage, and neural repair assays."
+                "Electromagnetic field technology stimulation triggers extracellular vesicle release, creating an ideal cell-derived substrate for muscle, cartilage, and neural repair assays."
                 <span style={{ display: "block", fontSize: "0.85rem", fontWeight: 700, color: "var(--brand-primary)", marginTop: "8px", fontStyle: "normal" }}>
                   — Published in Biomaterials, Adv. Biosystems, and Stem Cell Research
                 </span>
@@ -326,14 +350,6 @@ export default function Tech() {
                   <td style={{ padding: "20px" }}>Moderate</td>
                   <td style={{ padding: "20px" }}>High (Specific)</td>
                   <td style={{ padding: "20px", fontWeight: 600, color: "var(--accent-red)", background: "rgba(217, 35, 52, 0.02)" }}>High (Targeted & Broad)</td>
-                </tr>
-                <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
-                  <td style={{ padding: "20px", fontWeight: 700 }}>Consistency</td>
-                  <td style={{ padding: "20px" }}>Low</td>
-                  <td style={{ padding: "20px" }}>High</td>
-                  <td style={{ padding: "20px" }}>Moderate</td>
-                  <td style={{ padding: "20px" }}>Low–Moderate</td>
-                  <td style={{ padding: "20px", fontWeight: 600, color: "var(--accent-red)", background: "rgba(217, 35, 52, 0.02)" }}>High (Designed Output)</td>
                 </tr>
                 <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
                   <td style={{ padding: "20px", fontWeight: 700 }}>Scalability</td>

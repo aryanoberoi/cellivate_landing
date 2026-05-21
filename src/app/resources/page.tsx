@@ -120,7 +120,7 @@ export default function Resources() {
             <form onSubmit={handleUnlockSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {formStatus === "error" && (
                 <div style={{ background: "#fef2f2", border: "1px solid #fecaca", padding: "12px", borderRadius: "8px", color: "#991b1b", fontSize: "0.9rem" }}>
-                  ⚠️ Something went wrong. Please try again or contact us directly at viknish@cellivatetech.com.
+                  ⚠️ Something went wrong. Please try again or contact us directly at admin@cellivatetech.com.
                 </div>
               )}
 

@@ -96,7 +96,7 @@ export default function Pilot() {
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                 {status === "error" && (
                   <div style={{ background: "#fef2f2", border: "1px solid #fecaca", padding: "16px", borderRadius: "12px", color: "#991b1b", fontSize: "0.95rem", lineHeight: "1.5" }}>
-                    ⚠️ Something went wrong submitting your application. Please try again or email us directly at <strong>viknish@cellivatetech.com</strong>.
+                    ⚠️ Something went wrong submitting your application. Please try again or email us directly at <strong>admin@cellivatetech.com</strong>.
                   </div>
                 )}
                 <div>

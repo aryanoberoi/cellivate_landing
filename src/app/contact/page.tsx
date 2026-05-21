@@ -65,15 +65,7 @@ export default function Contact() {
                 <span style={{ fontSize: "1.5rem" }}>✉️</span>
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)" }}>Email Address</h4>
-                  <p style={{ color: "var(--brand-light)", fontSize: "0.9rem" }}>viknish@cellivatetech.com</p>
-                </div>
-              </div>
-
-              <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "center", gap: "16px" }}>
-                <span style={{ fontSize: "1.5rem" }}>📞</span>
-                <div>
-                  <h4 style={{ fontWeight: 700, color: "var(--brand-primary)" }}>Contact Number</h4>
-                  <p style={{ color: "var(--brand-light)", fontSize: "0.9rem" }}>+65-97356-007</p>
+                  <p style={{ color: "var(--brand-light)", fontSize: "0.9rem" }}>admin@cellivatetech.com</p>
                 </div>
               </div>
             </div>
@@ -100,7 +92,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                 {status === "error" && (
                   <div style={{ background: "#fef2f2", border: "1px solid #fecaca", padding: "16px", borderRadius: "12px", color: "#991b1b", fontSize: "0.95rem", lineHeight: "1.5" }}>
-                    ⚠️ Something went wrong sending your message. Please try again or email us directly at <strong>viknish@cellivatetech.com</strong>.
+                    ⚠️ Something went wrong sending your message. Please try again or email us directly at <strong>admin@cellivatetech.com</strong>.
                   </div>
                 )}
                 <div>

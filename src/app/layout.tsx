@@ -21,6 +21,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Cellivate Technologies | Fetal Bovine Serum Alternatives",
   description: "Revolutionising cell-based solutions for a sustainable future with BOOSTER platform technology and EV-based biological inputs.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -36,24 +39,11 @@ export default function RootLayout({
           <div className="nav-container" style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <Link href="/" className="logo-group" id="brand-logo" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
               <div className="logo-icon" style={{ display: "flex", alignItems: "center" }}>
-                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {/* Connecting lines */}
-                  <line x1="30" y1="35" x2="70" y2="30" stroke="#c7d2fe" strokeWidth="4" strokeLinecap="round" />
-                  <line x1="30" y1="35" x2="50" y2="70" stroke="#a7f3d0" strokeWidth="4" strokeLinecap="round" />
-                  <line x1="70" y1="30" x2="50" y2="70" stroke="#c7d2fe" strokeWidth="4" strokeLinecap="round" />
-                  
-                  {/* Top-Left Circle (Purple) */}
-                  <circle cx="30" cy="35" r="14" fill="#3b2e9a" />
-                  <circle cx="30" cy="35" r="7" fill="#818cf8" />
-                  
-                  {/* Top-Right Circle (Blue) */}
-                  <circle cx="70" cy="30" r="10" fill="#4f46e5" />
-                  <circle cx="70" cy="30" r="5" fill="#a5b4fc" />
-                  
-                  {/* Bottom-Center Circle (Green) */}
-                  <circle cx="50" cy="70" r="12" fill="#10b981" />
-                  <circle cx="50" cy="70" r="6" fill="#34d399" />
-                </svg>
+                <img 
+                  src="/favicon.ico" 
+                  alt="Cellivate Technologies Logo" 
+                  style={{ width: "40px", height: "40px", objectFit: "contain" }}
+                />
               </div>
               <div className="brand-text" style={{ display: "flex", flexDirection: "column", lineHeight: "1.0" }}>
                 <span className="brand-name" style={{ fontSize: "1.45rem", fontWeight: 800, color: "#3b2e9a", letterSpacing: "-0.5px" }}>Cellivate</span>
@@ -95,20 +85,11 @@ export default function RootLayout({
               <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 <Link href="/" className="logo-group" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
                   <div className="logo-icon" style={{ display: "flex", alignItems: "center" }}>
-                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <line x1="30" y1="35" x2="70" y2="30" stroke="#c7d2fe" strokeWidth="4" strokeLinecap="round" />
-                      <line x1="30" y1="35" x2="50" y2="70" stroke="#a7f3d0" strokeWidth="4" strokeLinecap="round" />
-                      <line x1="70" y1="30" x2="50" y2="70" stroke="#c7d2fe" strokeWidth="4" strokeLinecap="round" />
-                      
-                      <circle cx="30" cy="35" r="14" fill="#3b2e9a" />
-                      <circle cx="30" cy="35" r="7" fill="#818cf8" />
-                      
-                      <circle cx="70" cy="30" r="10" fill="#4f46e5" />
-                      <circle cx="70" cy="30" r="5" fill="#a5b4fc" />
-                      
-                      <circle cx="50" cy="70" r="12" fill="#10b981" />
-                      <circle cx="50" cy="70" r="6" fill="#34d399" />
-                    </svg>
+                    <img 
+                      src="/favicon.ico" 
+                      alt="Cellivate Technologies Logo" 
+                      style={{ width: "40px", height: "40px", objectFit: "contain" }}
+                    />
                   </div>
                   <div className="brand-text" style={{ display: "flex", flexDirection: "column", lineHeight: "1.0" }}>
                     <span className="brand-name" style={{ fontSize: "1.45rem", fontWeight: 800, color: "#3b2e9a", letterSpacing: "-0.5px" }}>Cellivate</span>
@@ -167,12 +148,7 @@ export default function RootLayout({
                 <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
                   <div>
                     <span style={{ display: "block", fontSize: "0.85rem", color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "4px" }}>Email</span>
-                    <a href="mailto:contact@cellivatetech.com" style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--brand-primary)", textDecoration: "none", transition: "color 0.2s" }}>contact@cellivatetech.com</a>
-                  </div>
-                  
-                  <div>
-                    <span style={{ display: "block", fontSize: "0.85rem", color: "#94a3b8", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.5px", marginBottom: "4px" }}>Phone</span>
-                    <a href="tel:+6587826213" style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--brand-primary)", textDecoration: "none" }}>+65 8782 6213</a>
+                    <a href="mailto:admin@cellivatetech.com" style={{ fontSize: "1.25rem", fontWeight: 700, color: "var(--brand-primary)", textDecoration: "none", transition: "color 0.2s" }}>admin@cellivatetech.com</a>
                   </div>
                   
                   <div>
