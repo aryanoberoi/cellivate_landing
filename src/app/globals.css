@@ -3659,6 +3659,7 @@ body {
 
 /* Flashcard Container styling with 3D perspective */
 .flashcard-container {
+    -webkit-perspective: 1200px;
     perspective: 1200px;
     min-height: 420px;
     cursor: pointer;
@@ -3670,11 +3671,13 @@ body {
     width: 100%;
     height: 100%;
     min-height: 420px;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .flashcard-container.is-flipped .flashcard-inner {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
@@ -3685,8 +3688,8 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -3694,6 +3697,8 @@ body {
     flex-direction: column;
     overflow: hidden;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 .flashcard-front:hover,
@@ -3702,8 +3707,24 @@ body {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
 }
 
+.flashcard-front {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    z-index: 2;
+}
+
 .flashcard-back {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.flashcard-container.is-flipped .flashcard-front {
+    z-index: 1;
+}
+
+.flashcard-container.is-flipped .flashcard-back {
+    z-index: 2;
 }
 
 /* Card Gradient Themes */

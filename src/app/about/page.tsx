@@ -70,7 +70,7 @@ export default function About() {
       linkedin: "https://www.linkedin.com/company/cellivate-technologies/"
     },
     {
-      name: "Thanthulu Sridharan Janavi",
+      name: "Thanthullu Sridharan",
       role: "Graduate Biomedical Research Intern",
       image: "/team/Thanthulu Sridharan Janavi_Graduate Biomedical Research Intern.png",
       bio: "Conducting laboratory assay profiling, cell characterization studies, and performance validations of formulation runs.",
@@ -418,7 +418,7 @@ export default function About() {
                 </div>
                 <h3 className="about-person-name">{member.name}</h3>
                 <span className="about-person-role">{member.role}</span>
-                <p className="about-person-bio">{member.bio}</p>
+
                 <div style={{ display: "flex", justifyContent: "center", marginTop: "12px" }}>
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "#0077b5", display: "inline-flex", alignItems: "center", gap: "6px", textDecoration: "none", fontSize: "0.85rem", fontWeight: 600 }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

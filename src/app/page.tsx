@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function Home() {
@@ -11,6 +11,17 @@ export default function Home() {
     cx: number;
     cy: number;
   } | null>(null);
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(err => {
+        console.warn("Autoplay failed:", err);
+      });
+    }
+  }, []);
 
   return (
     <main style={{ minHeight: "100vh" }}>
@@ -78,7 +89,16 @@ export default function Home() {
           <div className="hero-visual-area">
             <div className="video-perspective-wrapper">
               <div className="video-container-glass">
-                <video className="cellivate-loop-video" autoPlay loop muted playsInline aria-hidden="true" style={{ width: "100%", height: "100%", objectFit: "cover" }}>
+                <video 
+                  ref={videoRef}
+                  className="cellivate-loop-video" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  aria-hidden="true" 
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                >
                   <source src="/boomerang_loop.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
