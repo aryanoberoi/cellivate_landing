@@ -19,8 +19,8 @@ export default function Tech() {
     {
       title: "Get Cells",
       shortDesc: "From numerous sources like cell banks, off-the-shelf vials, etc.",
-      desc: "We source high-quality donor cells from established cell banks, off-the-shelf vials, or other qualified repositories.",
-      detail: "Sourcing healthy, standardized donor cells from cell banks or off-the-shelf configurations ensures a robust and compliant biological starting material for Booster production.",
+      desc: "We source high-quality cells from established cell banks, off-the-shelf vials, or other qualified repositories.",
+      detail: "Sourcing healthy, standardized off-the-shelf source cells from cell banks ensures a robust and compliant biological starting material for Booster production.",
       image: "/extracted_images/cell_banking_vials.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -33,8 +33,8 @@ export default function Tech() {
     {
       title: "Magnetic Stimulation",
       shortDesc: "Proprietary electromagnetic stimulation to prime EV release.",
-      desc: "Priming cells within our customized electromagnetic field technology chamber to boost signaling factor secretion.",
-      detail: "Our proprietary electromagnetic field technology primes cells to trigger specific physiological responses. This cellular activation drives controlled mitochondrial responses, stimulating cells to package growth factors and signaling cues into extracellular vesicles.",
+      desc: "Stimulating cells within our customized electromagnetic field technology chamber to naturally boost signaling factor secretion.",
+      detail: "Our proprietary electromagnetic field technology stimulates cells to naturally trigger specific physiological response. This activation drives modulated mitochondrial responses, resulting in selective sorting and loading of vital growth factors and signaling molecules into extracellular vesicles key for extracellular communication",
       image: "/extracted_images/magnetic_stimulation_chamber.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -47,8 +47,8 @@ export default function Tech() {
     {
       title: "Characterize and Formulate",
       shortDesc: "Filter, analyze, and stabilize the final formulation.",
-      desc: "Filter the conditioned media and characterize particle-rich output using orthogonal analytics, including NTA.",
-      detail: "We introduce proprietary stabilizer additives to guarantee output stability, batch-to-batch consistency, and complete reproducibility. This ensures that the final formulation is highly optimized for primary cell-based workflows and downstream biomanufacturing.",
+      desc: "Filter and characterize particle-rich output using orthogonal analytics, including NTA.",
+      detail: "By integrating proprietary stabilizing additives, we guarantee excellent formulation stability, batch-to-batch consistency, and absolute reproducibility—fully optimizing the final product for primary cell workflows and commercial biomanufacturing.",
       image: "/extracted_images/booster_formulation.png",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -65,9 +65,9 @@ export default function Tech() {
         <div className="tech-hero-bg" />
         <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.85rem" }}>The Platform</span>
-          <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>The technology that powers our Booster production</h1>
+          <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>Powering Booster Production</h1>
           <p style={{ fontSize: "1.15rem", color: "#cbd5e1", maxWidth: "700px", margin: "16px auto 0 auto", lineHeight: "1.6" }}>
-            From raw animal extraction to programmable extracellular signaling platforms.
+            Serum Extracted from bovine foetuses in slaughterhouses to a platform for naturally programmable extracellular signaling
           </p>
         </div>
 
@@ -222,7 +222,7 @@ export default function Tech() {
                   </p>
                 </div>
                 <div style={{ background: "var(--bg-secondary)", padding: "20px", borderRadius: "16px", borderLeft: "4px solid var(--accent-red)" }}>
-                  <span style={{ fontWeight: 700, color: "var(--brand-primary)", display: "block", marginBottom: "6px", fontSize: "0.9rem" }}>BIOLOGICAL ENGINE:</span>
+                  <span style={{ fontWeight: 700, color: "var(--brand-primary)", display: "block", marginBottom: "6px", fontSize: "0.9rem" }}>PRODUCT FORMULATION:</span>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.55", margin: 0 }}>
                     {steps[activeStep].detail}
                   </p>
@@ -251,17 +251,17 @@ export default function Tech() {
                 Extracellular Vesicles (EVs)
               </h2>
               <p style={{ fontSize: "1.15rem", color: "#cbd5e1", lineHeight: "1.6", marginBottom: "30px" }}>
-                Cells communicate and regulate biological responses via extracellular vesicles (EVs). Membrane-bound particles released by cells carry proteins, RNA, lipids, and other signaling cargo.
+                Cells communicate and regulate biological responses through different mechanisms. EVs are an example. Membrane-bound particles released by cells carry proteins, RNA, lipids, and other signaling cargo.
               </p>
               
               <div className="tech-stats-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
                 <div style={{ background: "rgba(255,255,255,0.04)", padding: "20px", borderRadius: "12px" }}>
                   <h4 style={{ color: "var(--accent-red)", fontSize: "1.5rem", fontWeight: 800 }}>Nano-to-Micron</h4>
-                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>EVs span a broad nano-to-micron size range</p>
+                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>EVs exhibit a heterogenous size distribution from the nanoscale to the sub-micron scale</p>
                 </div>
                 <div style={{ background: "rgba(255,255,255,0.04)", padding: "20px", borderRadius: "12px" }}>
                   <h4 style={{ color: "var(--accent-red)", fontSize: "1.5rem", fontWeight: 800 }}>2013</h4>
-                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>Nobel Prize for discoveries of the machinery regulating vesicle traffic</p>
+                  <p style={{ color: "#94a3b8", fontSize: "0.9rem", marginTop: "4px" }}>Nobel Prize for their discoveries of the molecular machinery that regulates vesicle traffic – the cell's vital transport system (James E. Rothman, Randy W. Schekman, and Thomas C. Südhof)</p>
                 </div>
               </div>
             </div>
@@ -330,10 +330,10 @@ export default function Tech() {
                 Scientific Rationale & Mechanistic Basis
               </h2>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "20px" }}>
-                Our electromagnetic field technology induces <strong>mitohormesis</strong> (mitochondrial survival adaptations). This promotes mitochondriogenesis and reduces apoptosis.
+                Electromagnetic field technology induces <strong>mitohormesis</strong> (mitochondrial survival adaptations). This promotes mitochondriogenesis and reduces apoptosis.
               </p>
               <p style={{ color: "var(--brand-light)", lineHeight: "1.6", marginBottom: "24px" }}>
-                Specifically, magnetic modulation activates a calcium-mitochondrial axis via the <strong>TRPC1</strong> (Transient Receptor Potential Canonical 1) channel. This stimulates cellular respiration and co-activates PGC-1α transcription, generating high secretome output containing vital proteins and bio-active molecules.
+                Magnetic modulation activates a <strong>TRPC1</strong>-mediated calcium–mitochondrial signalling axis, enhancing cellular respiration and upregulating PGC-1α expression. This metabolic reprogramming supports the production of an enriched secretome containing key proteins and bioactive molecules.
               </p>
               
               <div style={{ borderLeft: "4px solid var(--accent-red)", paddingLeft: "20px", fontStyle: "italic", color: "var(--brand-light)" }}>
@@ -348,17 +348,11 @@ export default function Tech() {
               <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "20px" }}>Tested Across Diverse Cell Types</h3>
               
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px" }}>
                   <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>HEK Cells</span>
-                  <span style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.4" }}>Consistent growth and high viability in suspension culture.</span>
                 </div>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px" }}>
                   <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>Mesenchymal Stem Cells (MSCs)</span>
-                  <span style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.4" }}>Enhanced proliferation and maintenance of stemness.</span>
-                </div>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px", display: "flex", flexDirection: "column", gap: "4px" }}>
-                  <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>C2C12 Cells</span>
-                  <span style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.4" }}>Improved myoblast proliferation and differentiation.</span>
                 </div>
               </div>
             </div>
@@ -385,7 +379,7 @@ export default function Tech() {
                   <th style={{ padding: "20px", fontWeight: 600 }}>Recombinant Proteins</th>
                   <th style={{ padding: "20px", fontWeight: 600 }}>Hydrolysates</th>
                   <th style={{ padding: "20px", fontWeight: 600 }}>HPL (Platelet Lysate)</th>
-                  <th style={{ padding: "20px", fontWeight: 600, background: "var(--accent-red)" }}>Cellivate BOOSTER</th>
+                  <th style={{ padding: "20px", fontWeight: 600, background: "#3b2e9a" }}>Cellivate BOOSTER</th>
                 </tr>
               </thead>
               <tbody>
@@ -395,7 +389,7 @@ export default function Tech() {
                   <td style={{ padding: "20px" }}>Moderate–High (Narrow)</td>
                   <td style={{ padding: "20px" }}>Moderate</td>
                   <td style={{ padding: "20px" }}>High (Specific)</td>
-                  <td style={{ padding: "20px", fontWeight: 600, color: "var(--accent-red)", background: "rgba(217, 35, 52, 0.02)" }}>High (Targeted & Broad)</td>
+                  <td style={{ padding: "20px", fontWeight: 600, color: "#3b2e9a", background: "rgba(59, 46, 154, 0.02)" }}>High (Targeted & Broad)</td>
                 </tr>
                 <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
                   <td style={{ padding: "20px", fontWeight: 700 }}>Scalability</td>
@@ -403,7 +397,7 @@ export default function Tech() {
                   <td style={{ padding: "20px" }}>Limited (Cost-driven)</td>
                   <td style={{ padding: "20px" }}>High</td>
                   <td style={{ padding: "20px" }}>Limited</td>
-                  <td style={{ padding: "20px", fontWeight: 600, color: "var(--accent-red)", background: "rgba(217, 35, 52, 0.02)" }}>High (Cell-based loop)</td>
+                  <td style={{ padding: "20px", fontWeight: 600, color: "#3b2e9a", background: "rgba(59, 46, 154, 0.02)" }}>High (Cell-based loop)</td>
                 </tr>
                 <tr style={{ borderBottom: "1px solid rgba(0,0,0,0.06)" }}>
                   <td style={{ padding: "20px", fontWeight: 700 }}>Complexity</td>
@@ -411,7 +405,7 @@ export default function Tech() {
                   <td style={{ padding: "20px" }}>Low</td>
                   <td style={{ padding: "20px" }}>Moderate</td>
                   <td style={{ padding: "20px" }}>High</td>
-                  <td style={{ padding: "20px", fontWeight: 600, color: "var(--accent-red)", background: "rgba(217, 35, 52, 0.02)" }}>High (Functional Signaling)</td>
+                  <td style={{ padding: "20px", fontWeight: 600, color: "#3b2e9a", background: "rgba(59, 46, 154, 0.02)" }}>High (Functional Signaling)</td>
                 </tr>
                 <tr>
                   <td style={{ padding: "20px", fontWeight: 700 }}>Cost Trajectory</td>
@@ -419,7 +413,7 @@ export default function Tech() {
                   <td style={{ padding: "20px" }}>High</td>
                   <td style={{ padding: "20px" }}>Low–Moderate</td>
                   <td style={{ padding: "20px" }}>High</td>
-                  <td style={{ padding: "20px", fontWeight: 600, color: "var(--accent-red)", background: "rgba(217, 35, 52, 0.02)" }}>Decreasing with scale</td>
+                  <td style={{ padding: "20px", fontWeight: 600, color: "#3b2e9a", background: "rgba(59, 46, 154, 0.02)" }}>Decreasing with scale</td>
                 </tr>
               </tbody>
             </table>

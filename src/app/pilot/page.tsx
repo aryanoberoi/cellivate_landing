@@ -57,18 +57,15 @@ export default function Pilot() {
             <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px", marginBottom: "20px" }}>
               Join the Cellivate Pilot Network
             </h1>
-            <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "24px" }}>
-              We collaborate with advanced biotechnology teams, cultivated meat producers, and skincare labs to benchmark BOOSTER directly against traditional fetal bovine serum.
-            </p>
             <p style={{ color: "var(--brand-light)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "30px" }}>
-              Selected partners will receive a <strong>free validation sample kit</strong> tailored to their cell lines and growth protocols.
+              We collaborate with advanced biotechnology teams, cultivated meat producers, and skincare labs to benchmark BOOSTER directly against traditional fetal bovine serum.
             </p>
 
             <div style={{ background: "rgba(217, 35, 52, 0.04)", border: "1px solid rgba(217, 35, 52, 0.1)", padding: "30px", borderRadius: "16px" }}>
               <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "var(--brand-primary)", marginBottom: "12px" }}>Why Participate?</h3>
               <ul style={{ listStyleType: "none", padding: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
                 <li>✓ Benchmark cell-based performance side-by-side with FBS.</li>
-                <li>✓ Reduce long-term serum procurement costs by up to 40%.</li>
+                <li>✓ Up to 40% discount for early pilot customers who subsequently purchase from us.</li>
                 <li>✓ Shift to a 100% animal-free, ethical supply pipeline.</li>
               </ul>
             </div>

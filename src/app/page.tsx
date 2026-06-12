@@ -89,23 +89,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Floating Card 1 */}
-            <div className="float-card card-growth" id="card-growth">
-              <div className="card-icon-circle color-purple" style={{ background: "rgba(59, 46, 154, 0.1)", color: "#3b2e9a" }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                  <path d="M3 10l6-6 6 6 6-6"></path>
-                </svg>
-              </div>
-              <div className="card-content">
-                <div className="card-title-prefix">Up to</div>
-                <div className="card-stat" style={{ color: "#3b2e9a" }}>60%</div>
-                <div className="card-desc">enhanced cell growth</div>
-              </div>
-            </div>
-
             {/* Floating Card 2 */}
             <div className="float-card card-alternative" id="card-alternative">
               <div className="card-icon-circle color-green" style={{ background: "rgba(16, 185, 129, 0.1)", color: "#10b981" }}>
@@ -168,16 +151,16 @@ export default function Home() {
                   <span style={{ color: "var(--accent-red)" }}>🔴</span> Ethically Compromised
                 </h4>
                 <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Extracted from blood drawn from cow fetuses during slaughter.
+                  Blood is drained from live bovine foetuses, cut from the uteruses of slaughtered pregnant cows — without anaesthesia.
                 </p>
               </div>
 
               <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", padding: "24px", borderRadius: "16px", backdropFilter: "blur(12px)" }}>
                 <h4 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#ffffff", display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                  <span style={{ color: "var(--accent-red)" }}>🔴</span> Extreme Lot Variability
+                  <span style={{ color: "var(--accent-red)" }}>🔴</span> Extreme Lot Variability & Performance Risks
                 </h4>
                 <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Compositions fluctuate dramatically between batches, ruining experiment reproducibility.
+                  Compositions fluctuate dramatically between batches, ruining experiment reproducibility and leading to failed experiments, biopharma runs, or products.
                 </p>
               </div>
 
@@ -186,16 +169,7 @@ export default function Home() {
                   <span style={{ color: "var(--accent-red)" }}>🔴</span> Supply-Constrained & Costly
                 </h4>
                 <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Supply limitations keep costs high, exceeding $1,000 per liter.
-                </p>
-              </div>
-
-              <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", padding: "24px", borderRadius: "16px", backdropFilter: "blur(12px)" }}>
-                <h4 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#ffffff", display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                  <span style={{ color: "var(--accent-red)" }}>🔴</span> Performance Risks
-                </h4>
-                <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Performance unpredictability leads to failed experiments, biopharma runs, or products.
+                  Global supply constraints keep costs prohibitively high and growing, with no relief in sight.
                 </p>
               </div>
             </div>
@@ -294,7 +268,7 @@ export default function Home() {
                 </li>
                 <li style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <span style={{ width: "24px", height: "24px", background: "rgba(217, 35, 52, 0.2)", borderRadius: "50%", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--accent-red)", fontWeight: "bold" }}>✓</span>
-                  <span style={{ fontSize: "1.1rem", fontWeight: 600 }}>Up to 60% increase in cell growth kinetics</span>
+                  <span style={{ fontSize: "1.1rem", fontWeight: 600 }}>Measurable increase in cell growth kinetics</span>
                 </li>
               </ul>
               <Link href="/tech" className="btn-primary" style={{ padding: "14px 28px", background: "var(--accent-red)", color: "#ffffff", borderRadius: "30px", fontWeight: 600, textDecoration: "none", display: "inline-flex", transition: "all 0.3s" }}>
@@ -594,8 +568,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="cell-item-content">
-                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: "0 0 4px 0" }}>HEK Cells</h5>
-                      <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0, lineHeight: "1.4" }}>Consistent growth and high viability in suspension culture.</p>
+                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>HEK Cells</h5>
                     </div>
                   </div>
 
@@ -609,8 +582,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="cell-item-content">
-                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: "0 0 4px 0" }}>Mesenchymal Stem Cells (MSCs)</h5>
-                      <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0, lineHeight: "1.4" }}>Enhanced proliferation and maintenance of stemness.</p>
+                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Mesenchymal Stem Cells (MSCs)</h5>
                     </div>
                   </div>
 
@@ -630,8 +602,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="cell-item-content">
-                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: "0 0 4px 0" }}>C2C12 Cells</h5>
-                      <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0, lineHeight: "1.4" }}>Improved myoblast proliferation and differentiation.</p>
+                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>C2C12 Cells</h5>
                     </div>
                   </div>
 
@@ -648,8 +619,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="cell-item-content">
-                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: "0 0 4px 0" }}>Fibroblasts</h5>
-                      <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0, lineHeight: "1.4" }}>Superior attachment, growth, and morphology.</p>
+                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Fibroblasts</h5>
                     </div>
                   </div>
 
@@ -664,8 +634,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="cell-item-content">
-                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: "0 0 4px 0" }}>Fish Cells</h5>
-                      <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0, lineHeight: "1.4" }}>Supports robust growth in aquatic species.</p>
+                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Fish Cells</h5>
                     </div>
                   </div>
 
@@ -681,8 +650,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div className="cell-item-content">
-                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: "0 0 4px 0" }}>Cultivated Meat Cells</h5>
-                      <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0, lineHeight: "1.4" }}>Promotes cell growth for scalable cultivated meat production.</p>
+                      <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Cultivated Meat Cells</h5>
                     </div>
                   </div>
                 </div>
