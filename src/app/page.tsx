@@ -79,11 +79,11 @@ export default function Home() {
           <div className="hero-visual-area">
             <div className="video-perspective-wrapper">
               <div className="video-container-glass">
-                <img 
-                  className="cellivate-loop-video" 
-                  src="/boomerang_still.jpg" 
-                  alt="Cellivate Booster cell culture concept"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                <img
+                  className="cellivate-loop-video"
+                  src="/team/Thanthulu Sridharan Janavi_Graduate Biomedical Research Intern.png"
+                  alt="Cellivate Booster research"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
                 />
                 <div className="video-overlay-shield"></div>
               </div>

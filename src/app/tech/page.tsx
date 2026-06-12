@@ -267,40 +267,22 @@ export default function Tech() {
             </div>
 
             <div style={{ position: "relative", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(255, 255, 255, 0.08)", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", aspectRatio: "16/9", display: "flex", justifyContent: "center" }}>
-              <video 
+              <video
                 ref={videoRef}
-                autoPlay 
-                loop 
+                autoPlay
+                loop
                 muted={isMuted}
-                playsInline 
+                playsInline
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               >
                 <source src="/EVs%20Communicate-Cellivate%20Technologies.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to top, rgba(18, 18, 20, 0.4), transparent)", pointerEvents: "none" }} />
-              
-              <button 
+              <button
                 onClick={toggleMute}
                 aria-label={isMuted ? "Unmute video" : "Mute video"}
-                style={{ 
-                  position: "absolute", 
-                  bottom: "20px", 
-                  right: "20px", 
-                  background: "rgba(0, 0, 0, 0.6)", 
-                  border: "1px solid rgba(255, 255, 255, 0.2)", 
-                  color: "#ffffff", 
-                  width: "40px", 
-                  height: "40px", 
-                  borderRadius: "50%", 
-                  display: "flex", 
-                  alignItems: "center", 
-                  justifyContent: "center", 
-                  cursor: "pointer", 
-                  zIndex: 5,
-                  backdropFilter: "blur(4px)",
-                  transition: "all 0.2s ease"
-                }}
+                style={{ position: "absolute", bottom: "20px", right: "20px", background: "rgba(0,0,0,0.6)", border: "1px solid rgba(255,255,255,0.2)", color: "#ffffff", width: "40px", height: "40px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", zIndex: 5, backdropFilter: "blur(4px)", transition: "all 0.2s ease" }}
               >
                 {isMuted ? (
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -346,7 +328,6 @@ export default function Tech() {
 
             <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "40px", borderRadius: "24px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)" }}>
               <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "20px" }}>Tested Across Diverse Cell Types</h3>
-              
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px" }}>
                   <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>HEK Cells</span>
@@ -354,6 +335,106 @@ export default function Tech() {
                 <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px" }}>
                   <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>Mesenchymal Stem Cells (MSCs)</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Validation Data */}
+      <section style={{ padding: "100px 0", background: "var(--bg-main)" }}>
+        <div className="section-container">
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>In-House Data</span>
+            <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
+              Booster vs FBS — Cell Growth Results
+            </h2>
+            <p style={{ color: "var(--brand-light)", fontSize: "1.05rem", maxWidth: "600px", margin: "16px auto 0 auto", lineHeight: "1.6" }}>
+              Head-to-head performance across HEK293T cells shows nearly 2× higher cell density with Booster compared to FBS at equivalent concentrations.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "40px", alignItems: "center" }}>
+            {/* SVG Bar Chart */}
+            <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", borderRadius: "24px", padding: "40px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)" }}>
+              <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "4px" }}>HEK293T</h3>
+              <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", marginBottom: "32px" }}>Cell density (×10⁶ cells/mL) after 72 hours</p>
+
+              <div style={{ position: "relative", height: "240px", display: "flex", alignItems: "flex-end", gap: "48px", paddingLeft: "48px", paddingBottom: "40px" }}>
+                {/* Y-axis labels */}
+                {[0, 1, 2, 3, 4, 5].map(v => (
+                  <div key={v} style={{ position: "absolute", left: 0, bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1 }}>
+                    {v}
+                  </div>
+                ))}
+                {/* Y-axis grid lines */}
+                {[1, 2, 3, 4, 5].map(v => (
+                  <div key={v} style={{ position: "absolute", left: "48px", right: 0, bottom: `${(v / 5) * 200}px`, height: "1px", background: v === 5 ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.04)", borderTop: "1px dashed rgba(0,0,0,0.06)" }} />
+                ))}
+
+                {/* FBS Bar */}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
+                  <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8" }}>2.2</span>
+                  <div style={{ position: "relative", width: "80px" }}>
+                    {/* Error bar */}
+                    <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                      <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                      <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
+                      <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                    </div>
+                    <div style={{ height: `${(2.2 / 5) * 200}px`, background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s" }} />
+                  </div>
+                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
+                </div>
+
+                {/* Booster Bar */}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
+                  <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a" }}>4.0</span>
+                  <div style={{ position: "relative", width: "80px" }}>
+                    {/* Error bar */}
+                    <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                      <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                      <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
+                      <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                    </div>
+                    <div style={{ height: `${(4.0 / 5) * 200}px`, background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
+                  </div>
+                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
+                </div>
+              </div>
+
+              {/* X-axis baseline */}
+              <div style={{ marginLeft: "48px", height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px", marginBottom: "16px" }} />
+
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginLeft: "48px" }}>
+                <div style={{ width: "12px", height: "12px", borderRadius: "3px", background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)" }} />
+                <span style={{ fontSize: "0.8rem", color: "var(--brand-light)", fontWeight: 600 }}>Booster</span>
+                <div style={{ width: "12px", height: "12px", borderRadius: "3px", background: "#94a3b8", marginLeft: "12px" }} />
+                <span style={{ fontSize: "0.8rem", color: "var(--brand-light)", fontWeight: 600 }}>FBS</span>
+              </div>
+            </div>
+
+            {/* Callout stats */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+              <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "30px", borderRadius: "20px", boxShadow: "0 8px 24px rgba(0,0,0,0.02)" }}>
+                <div style={{ fontSize: "2.8rem", fontWeight: 800, color: "#3b2e9a", lineHeight: 1 }}>~1.8×</div>
+                <div style={{ fontWeight: 700, color: "var(--brand-primary)", marginTop: "8px", fontSize: "1rem" }}>Higher cell density</div>
+                <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", marginTop: "6px", lineHeight: "1.5" }}>
+                  Booster-treated HEK293T cells reach nearly double the density of FBS-treated cultures under identical conditions.
+                </p>
+              </div>
+              <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "30px", borderRadius: "20px", boxShadow: "0 8px 24px rgba(0,0,0,0.02)" }}>
+                <div style={{ fontSize: "2.8rem", fontWeight: 800, color: "var(--accent-red)", lineHeight: 1 }}>0%</div>
+                <div style={{ fontWeight: 700, color: "var(--brand-primary)", marginTop: "8px", fontSize: "1rem" }}>Animal components</div>
+                <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", marginTop: "6px", lineHeight: "1.5" }}>
+                  Fully xeno-free formulation with no fetal bovine serum, no animal-derived additives, and no batch variability.
+                </p>
+              </div>
+              <div style={{ background: "rgba(59,46,154,0.04)", border: "1px solid rgba(59,46,154,0.1)", padding: "20px 24px", borderRadius: "16px", display: "flex", gap: "14px", alignItems: "flex-start" }}>
+                <span style={{ fontSize: "1.4rem" }}>🔬</span>
+                <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.55", margin: 0 }}>
+                  Data generated in-house under standardised culture conditions. Results are representative of ≥3 independent experiments.
+                </p>
               </div>
             </div>
           </div>
