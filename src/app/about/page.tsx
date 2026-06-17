@@ -607,7 +607,15 @@ export default function About() {
               { name: "A*STAR", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382615-5OEJ3Y37YRS2C9MYVSNZ/AStar+Singapore.jpg" },
               { name: "NUS GRIP", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382618-53B2M1RSL2IDPFLIIZN2/Picture+NUSGRIP.jpg" },
               { name: "Enterprise Singapore", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382627-MREIBYGECHUOX1N0GITG/Enterprise+Singapore.png" },
-              { name: "Elev8.vc", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382635-UJ2SUYQOGPXQ1LY4ABHX/elev8.vc.png" }
+              { name: "Elev8.vc", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382635-UJ2SUYQOGPXQ1LY4ABHX/elev8.vc.png" },
+              { name: "Antler", url: "/partner-logos/antler.png" },
+              { name: "NUS Enterprise", url: "/partner-logos/nus-enterprise.jpeg" },
+              { name: "Venture Catalysts", url: "/partner-logos/venture-catalysts.png" },
+              { name: "WeFounderCircle", url: "/partner-logos/wefoundercircle.png" },
+              { name: "IPV", url: "/partner-logos/ipv.png" },
+              { name: "Hatcher+", url: "/partner-logos/hatcher-plus.png" },
+              { name: "MedTech Actuator", url: "/partner-logos/medtech-actuator.png" },
+              { name: "Mazumdar Shaw Medical Foundation", url: "/partner-logos/mazumdar-shaw.jpeg" }
             ].map((partner, idx) => (
               <div key={idx} className="partner-logo-card">
                 <img src={partner.url} alt={partner.name} />
