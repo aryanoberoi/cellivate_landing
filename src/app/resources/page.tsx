@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Resources() {
   const [unlockedBooks, setUnlockedBooks] = useState<Set<string>>(new Set());
   const [selectedBookIndex, setSelectedBookIndex] = useState<number | null>(null);
   const [showSignup, setShowSignup] = useState(false);
+  const actionPanelRef = useRef<HTMLDivElement>(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -65,6 +66,12 @@ export default function Resources() {
       setFormData({ name: "", designation: "", email: "", company: "" });
     }
   };
+
+  useEffect(() => {
+    if (selectedBookIndex !== null) {
+      actionPanelRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [selectedBookIndex, showSignup]);
 
   const handleUnlockSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -158,6 +165,9 @@ export default function Resources() {
             );
           })}
         </div>
+
+        {/* Action Panel: Signup Form or PDF Viewer, anchored so it's always visible after selection */}
+        <div ref={actionPanelRef} />
 
         {/* Signup Modal / Inline Form */}
         {showSignup && currentBook && (

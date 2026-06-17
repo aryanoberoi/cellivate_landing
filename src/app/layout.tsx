@@ -57,6 +57,7 @@ export default function RootLayout({
               <Link href="/about" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>About</Link>
               <Link href="/contact" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Contact</Link>
               <Link href="/resources" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Resources</Link>
+              <Link href="/careers" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Careers</Link>
             </nav>
 
             <MobileNav />
@@ -117,6 +118,7 @@ export default function RootLayout({
                   <Link href="/pilot" style={{ color: "var(--brand-light)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Pilot Program</Link>
                   <Link href="/about" style={{ color: "var(--brand-light)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>About us</Link>
                   <Link href="/contact" style={{ color: "var(--brand-light)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Contact Us</Link>
+                  <Link href="/careers" style={{ color: "var(--brand-light)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Careers</Link>
                 </div>
               </div>
 

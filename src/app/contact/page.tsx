@@ -54,7 +54,7 @@ export default function Contact() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
-                <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>📍</span>
+                <img src="https://flagcdn.com/w40/sg.png" alt="Singapore flag" style={{ width: "28px", height: "21px", marginTop: "2px", borderRadius: "3px", objectFit: "cover", border: "1px solid rgba(0,0,0,0.12)" }} />
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Singapore Office</h4>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0, lineHeight: "1.4" }}>
@@ -64,7 +64,7 @@ export default function Contact() {
               </div>
 
               <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
-                <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>🇦🇺</span>
+                <img src="https://flagcdn.com/w40/au.png" alt="Australia flag" style={{ width: "28px", height: "21px", marginTop: "2px", borderRadius: "3px", objectFit: "cover", border: "1px solid rgba(0,0,0,0.12)" }} />
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Australia Office</h4>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0, lineHeight: "1.4" }}>
@@ -74,7 +74,7 @@ export default function Contact() {
               </div>
 
               <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
-                <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>🇮🇳</span>
+                <img src="https://flagcdn.com/w40/in.png" alt="India flag" style={{ width: "28px", height: "21px", marginTop: "2px", borderRadius: "3px", objectFit: "cover", border: "1px solid rgba(0,0,0,0.12)" }} />
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>India Office</h4>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0, fontStyle: "italic" }}>

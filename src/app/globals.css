@@ -3152,8 +3152,8 @@ body {
     transition: all 0.3s ease !important;
 }
 .partner-logo-card img {
-    filter: grayscale(100%) contrast(70%) !important;
-    opacity: 0.6;
+    filter: none !important;
+    opacity: 1;
     transition: all 0.3s ease !important;
 }
 .partner-logo-card:hover {
@@ -3161,10 +3161,6 @@ body {
     box-shadow: 0 12px 28px rgba(81, 49, 165, 0.06);
     border-color: rgba(81, 49, 165, 0.15) !important;
     background: #ffffff !important;
-}
-.partner-logo-card:hover img {
-    filter: grayscale(0%) contrast(100%) !important;
-    opacity: 1 !important;
 }
 
 /* Responsive Scaling for 3D Flipbook */

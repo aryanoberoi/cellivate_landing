@@ -1,18 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
 
 export default function Home() {
-  const [hoveredDot, setHoveredDot] = useState<{
-    day: string;
-    value: string;
-    type: string;
-    cx: number;
-    cy: number;
-  } | null>(null);
-
-
   return (
     <main style={{ minHeight: "100vh" }}>
       {/* Hero Section */}
@@ -81,7 +72,7 @@ export default function Home() {
               <div className="video-container-glass">
                 <img
                   className="cellivate-loop-video"
-                  src="/boomerang_still.jpg"
+                  src="/ev-image-cvt.png"
                   alt="Cellivate Booster cell culture concept"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -356,158 +347,55 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Interactive SVG Chart */}
+                {/* Bar Chart */}
                 <div className="chart-wrapper" style={{ position: "relative" }}>
-                  <svg className="interactive-chart" viewBox="0 0 600 400" width="100%" height="100%">
-                    <defs>
-                      <filter id="purple-glow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="0" dy="8" stdDeviation="6" floodColor="#8b5cf6" floodOpacity="0.25"/>
-                      </filter>
-                      <linearGradient id="purple-gradient-bg" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.18"/>
-                        <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.0"/>
-                      </linearGradient>
-                    </defs>
+                  <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", marginBottom: "24px" }}>HEK293T cell density (×10⁶ cells/mL) after 72 hours</p>
 
-                    {/* Grid Lines */}
-                    <g className="chart-grid-lines">
-                      <line x1="60" y1="350" x2="560" y2="350" stroke="rgba(43, 20, 100, 0.08)" strokeWidth="1.5"/>
-                      <line x1="60" y1="305.7" x2="560" y2="305.7" stroke="rgba(43, 20, 100, 0.04)" strokeDasharray="4,4"/>
-                      <line x1="60" y1="261.4" x2="560" y2="261.4" stroke="rgba(43, 20, 100, 0.04)" strokeDasharray="4,4"/>
-                      <line x1="60" y1="217.1" x2="560" y2="217.1" stroke="rgba(43, 20, 100, 0.04)" strokeDasharray="4,4"/>
-                      <line x1="60" y1="172.9" x2="560" y2="172.9" stroke="rgba(43, 20, 100, 0.08)" strokeWidth="1.2"/>
-                      <line x1="60" y1="128.6" x2="560" y2="128.6" stroke="rgba(43, 20, 100, 0.04)" strokeDasharray="4,4"/>
-                      <line x1="60" y1="84.3" x2="560" y2="84.3" stroke="rgba(43, 20, 100, 0.04)" strokeDasharray="4,4"/>
-                      <line x1="60" y1="40" x2="560" y2="40" stroke="rgba(43, 20, 100, 0.04)" stroke-dasharray="4,4"/>
-                    </g>
-
-                    {/* Y Axis Labels */}
-                    <g className="chart-y-axis-labels" fontFamily="var(--font-sans)" fontSize="11" fontWeight="600" fill="var(--brand-light)" textAnchor="end">
-                      <text x="50" y="354">0</text>
-                      <text x="50" y="309.7">25</text>
-                      <text x="50" y="265.4">50</text>
-                      <text x="50" y="221.1">75</text>
-                      <text x="50" y="176.9">100</text>
-                      <text x="50" y="132.6">125</text>
-                      <text x="50" y="88.3">150</text>
-                      <text x="50" y="44">175</text>
-                    </g>
-
-                    {/* Y Axis Title */}
-                    <text className="chart-y-title" x="-195" y="18" transform="rotate(-90)" fontFamily="var(--font-sans)" fontSize="11" fontWeight="700" fill="var(--brand-light)" letterSpacing="0.05em" textAnchor="middle">
-                      RELATIVE CELL GROWTH (%)
-                    </text>
-
-                    {/* X Axis Labels */}
-                    <g className="chart-x-axis-labels" fontFamily="var(--font-sans)" fontSize="11" fontWeight="600" fill="var(--brand-light)" textAnchor="middle">
-                      <text x="60" y="372">0</text>
-                      <text x="160" y="372">1</text>
-                      <text x="260" y="372">2</text>
-                      <text x="360" y="372">3</text>
-                      <text x="460" y="372">4</text>
-                      <text x="560" y="372">5</text>
-                    </g>
-
-                    {/* X Axis Title */}
-                    <text className="chart-x-title" x="310" y="394" fontFamily="var(--font-sans)" fontSize="11" fontWeight="700" fill="var(--brand-light)" letterSpacing="0.05em" textAnchor="middle">
-                      TIME (DAYS)
-                    </text>
-
-                    {/* Gradient Fill Under Booster Line */}
-                    <path d="M 60 350 L 160 305.7 L 260 250.8 L 360 176.4 L 460 102 L 560 75.4 L 560 350 Z" fill="url(#purple-gradient-bg)" />
-
-                    {/* FBS Path Line */}
-                    <path d="M 60 350 L 160 314.6 L 260 305.7 L 360 265 L 460 226 L 560 172.9" stroke="rgba(148, 163, 184, 0.6)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-
-                    {/* Booster Path Line */}
-                    <path d="M 60 350 L 160 305.7 L 260 250.8 L 360 176.4 L 460 102 L 560 75.4" stroke="var(--accent-purple)" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" fill="none" filter="url(#purple-glow)"/>
-
-                    {/* FBS Data Points */}
-                    <g className="fbs-dots">
-                      {[
-                        { cx: 60, cy: 350, day: "0", value: "0%", type: "With FBS" },
-                        { cx: 160, cy: 314.6, day: "1", value: "20%", type: "With FBS" },
-                        { cx: 260, cy: 305.7, day: "2", value: "25%", type: "With FBS" },
-                        { cx: 360, cy: 265, day: "3", value: "48%", type: "With FBS" },
-                        { cx: 460, cy: 226, day: "4", value: "70%", type: "With FBS" },
-                        { cx: 560, cy: 172.9, day: "5", value: "100%", type: "With FBS" }
-                      ].map((pt, i) => (
-                        <circle
-                          key={`fbs-${i}`}
-                          cx={pt.cx}
-                          cy={pt.cy}
-                          r="5.5"
-                          fill="#ffffff"
-                          stroke="#94a3b8"
-                          strokeWidth="2.5"
-                          className="chart-dot"
-                          style={{ cursor: "pointer" }}
-                          onMouseEnter={() => setHoveredDot(pt)}
-                          onMouseLeave={() => setHoveredDot(null)}
-                        />
-                      ))}
-                    </g>
-
-                    {/* Booster Data Points */}
-                    <g className="booster-dots">
-                      {[
-                        { cx: 60, cy: 350, day: "0", value: "0%", type: "With Booster" },
-                        { cx: 160, cy: 305.7, day: "1", value: "25%", type: "With Booster" },
-                        { cx: 260, cy: 250.8, day: "2", value: "56%", type: "With Booster" },
-                        { cx: 360, cy: 176.4, day: "3", value: "98%", type: "With Booster" },
-                        { cx: 460, cy: 102, day: "4", value: "140%", type: "With Booster" },
-                        { cx: 560, cy: 75.4, day: "5", value: "155%", type: "With Booster" }
-                      ].map((pt, i) => (
-                        <circle
-                          key={`booster-${i}`}
-                          cx={pt.cx}
-                          cy={pt.cy}
-                          r="6"
-                          fill="#ffffff"
-                          stroke="var(--accent-purple)"
-                          strokeWidth="3"
-                          className="chart-dot booster-dot"
-                          style={{ cursor: "pointer" }}
-                          onMouseEnter={() => setHoveredDot(pt)}
-                          onMouseLeave={() => setHoveredDot(null)}
-                        />
-                      ))}
-                    </g>
-                  </svg>
-
-                  {/* Glassmorphic React Tooltip */}
-                  {hoveredDot && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        left: `${(hoveredDot.cx / 600) * 100}%`,
-                        top: `${(hoveredDot.cy / 400) * 100}%`,
-                        transform: "translate(-50%, -100%) translateY(-10px)",
-                        background: "rgba(31, 23, 76, 0.95)",
-                        border: "1px solid rgba(255, 255, 255, 0.2)",
-                        backdropFilter: "blur(10px)",
-                        padding: "8px 12px",
-                        borderRadius: "8px",
-                        color: "#fff",
-                        fontFamily: "var(--font-sans)",
-                        fontSize: "0.82rem",
-                        fontWeight: 600,
-                        pointerEvents: "none",
-                        zIndex: 100,
-                        boxShadow: "0 8px 24px rgba(31, 23, 76, 0.15)",
-                        textAlign: "left",
-                        whiteSpace: "nowrap",
-                        transition: "opacity 0.15s ease",
-                      }}
-                    >
-                      <div style={{ fontSize: "0.75rem", color: "#a1a1aa", marginBottom: "2px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Day {hoveredDot.day}</div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                        <span style={{ display: "inline-block", width: "8px", height: "8px", borderRadius: "50%", backgroundColor: hoveredDot.type.includes("Booster") ? "var(--accent-purple)" : "#94a3b8" }}></span>
-                        <span style={{ fontWeight: 700, color: hoveredDot.type.includes("Booster") ? "#c084fc" : "#e2e8f0" }}>{hoveredDot.value} Growth</span>
+                  <div style={{ position: "relative", height: "240px", display: "flex", alignItems: "flex-end", gap: "48px", paddingLeft: "48px", paddingBottom: "40px" }}>
+                    {/* Y-axis labels */}
+                    {[0, 1, 2, 3, 4, 5].map(v => (
+                      <div key={v} style={{ position: "absolute", left: 0, bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1 }}>
+                        {v}
                       </div>
-                      <div style={{ fontSize: "0.75rem", color: "#71717a", marginTop: "2px" }}>{hoveredDot.type}</div>
+                    ))}
+                    {/* Y-axis grid lines */}
+                    {[1, 2, 3, 4, 5].map(v => (
+                      <div key={v} style={{ position: "absolute", left: "48px", right: 0, bottom: `${(v / 5) * 200}px`, height: "1px", background: v === 5 ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.04)", borderTop: "1px dashed rgba(0,0,0,0.06)" }} />
+                    ))}
+
+                    {/* FBS Bar */}
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8" }}>2.2</span>
+                      <div style={{ position: "relative", width: "80px" }}>
+                        {/* Error bar */}
+                        <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                          <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                          <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
+                          <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                        </div>
+                        <div style={{ height: `${(2.2 / 5) * 200}px`, background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s" }} />
+                      </div>
+                      <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
                     </div>
-                  )}
+
+                    {/* Booster Bar */}
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a" }}>4.0</span>
+                      <div style={{ position: "relative", width: "80px" }}>
+                        {/* Error bar */}
+                        <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                          <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                          <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
+                          <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                        </div>
+                        <div style={{ height: `${(4.0 / 5) * 200}px`, background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
+                      </div>
+                      <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
+                    </div>
+                  </div>
+
+                  {/* X-axis baseline */}
+                  <div style={{ marginLeft: "48px", height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px", marginBottom: "16px" }} />
                 </div>
 
                 {/* Chart Legend */}

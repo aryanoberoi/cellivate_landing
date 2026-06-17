@@ -326,14 +326,106 @@ export default function Tech() {
               </div>
             </div>
 
-            <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "40px", borderRadius: "24px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)" }}>
-              <h3 style={{ fontSize: "1.3rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "20px" }}>Tested Across Diverse Cell Types</h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px" }}>
-                  <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>HEK Cells</span>
+            <div className="cell-list-container">
+              <h4 className="cell-list-title">Tested Across Diverse Cell Types</h4>
+              <div className="cell-list-items">
+                {/* Cell Item 1 */}
+                <div className="cell-list-item hover-glow-purple">
+                  <div className="cell-item-icon-circle text-purple">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="3"></circle>
+                      <circle cx="8" cy="9" r="1.5"></circle>
+                      <circle cx="16" cy="9" r="1.5"></circle>
+                      <circle cx="9" cy="15" r="1.5"></circle>
+                      <circle cx="15" cy="15" r="1.5"></circle>
+                    </svg>
+                  </div>
+                  <div className="cell-item-content">
+                    <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>HEK Cells</h5>
+                  </div>
                 </div>
-                <div style={{ background: "var(--bg-main)", padding: "16px", borderRadius: "12px" }}>
-                  <span style={{ fontWeight: 700, color: "var(--brand-primary)" }}>Mesenchymal Stem Cells (MSCs)</span>
+
+                {/* Cell Item 2 */}
+                <div className="cell-list-item hover-glow-green">
+                  <div className="cell-item-icon-circle text-green">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+                      <path d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z"></path>
+                      <path d="M12 8c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z"></path>
+                    </svg>
+                  </div>
+                  <div className="cell-item-content">
+                    <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Mesenchymal Stem Cells (MSCs)</h5>
+                  </div>
+                </div>
+
+                {/* Cell Item 3 */}
+                <div className="cell-list-item hover-glow-purple">
+                  <div className="cell-item-icon-circle text-purple">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 17 L21 7"></path>
+                      <path d="M5 20 L23 10"></path>
+                      <path d="M1 14 L19 4"></path>
+                      <path d="M8 8 L7 10"></path>
+                      <path d="M12 6 L11 8"></path>
+                      <path d="M16 4 L15 6"></path>
+                      <path d="M10 11 L9 13"></path>
+                      <path d="M14 9 L13 11"></path>
+                      <path d="M18 7 L17 9"></path>
+                    </svg>
+                  </div>
+                  <div className="cell-item-content">
+                    <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>C2C12 Cells</h5>
+                  </div>
+                </div>
+
+                {/* Cell Item 4 */}
+                <div className="cell-list-item hover-glow-green">
+                  <div className="cell-item-icon-circle text-green">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 12 C 7 9, 17 9, 22 12 C 17 15, 7 15, 2 12 Z"></path>
+                      <circle cx="12" cy="12" r="2.5" fill="currentColor"></circle>
+                      <path d="M2 12 L0 10"></path>
+                      <path d="M2 12 L0 14"></path>
+                      <path d="M22 12 L24 10"></path>
+                      <path d="M22 12 L24 14"></path>
+                    </svg>
+                  </div>
+                  <div className="cell-item-content">
+                    <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Fibroblasts</h5>
+                  </div>
+                </div>
+
+                {/* Cell Item 5 */}
+                <div className="cell-list-item hover-glow-purple">
+                  <div className="cell-item-icon-circle text-purple">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M23 12c-2.5-3-6-4.5-10-4.5-4.5 0-8.5 2-11 5 2.5 3 6.5 5 11 5 4 0 7.5-1.5 10-5.5z"></path>
+                      <path d="M2 12.5l-2-2m2 1l-2 2"></path>
+                      <path d="M22 11.5l2-2.5v5l-2-2.5z"></path>
+                      <circle cx="17" cy="10.5" r="1" fill="currentColor"></circle>
+                    </svg>
+                  </div>
+                  <div className="cell-item-content">
+                    <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Fish Cells</h5>
+                  </div>
+                </div>
+
+                {/* Cell Item 6 */}
+                <div className="cell-list-item hover-glow-green">
+                  <div className="cell-item-icon-circle text-green">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <ellipse cx="12" cy="13" rx="9" ry="6"></ellipse>
+                      <ellipse cx="12" cy="11" rx="9" ry="6"></ellipse>
+                      <circle cx="9" cy="10" r="1.5"></circle>
+                      <circle cx="14" cy="12" r="1.5"></circle>
+                      <circle cx="11" cy="13" r="1"></circle>
+                    </svg>
+                  </div>
+                  <div className="cell-item-content">
+                    <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Cultivated Meat Cells</h5>
+                  </div>
                 </div>
               </div>
             </div>
