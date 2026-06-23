@@ -2,6 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
+import Parallax from "@/components/Parallax";
+import SlowVideo from "@/components/SlowVideo";
 
 export default function Home() {
   return (
@@ -68,51 +70,42 @@ export default function Home() {
           </div>
 
           <div className="hero-visual-area">
-            <div className="video-perspective-wrapper">
-              <div className="video-container-glass">
-                <img
-                  className="cellivate-loop-video"
-                  src="/ev-image-cvt.png"
-                  alt="Cellivate Booster cell culture concept"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-                <div className="video-overlay-shield"></div>
+            <Parallax speed={0.12}>
+              <div className="video-perspective-wrapper">
+                <div className="video-container-glass">
+                  <video
+                    className="cellivate-loop-video"
+                    src="/hero-ev-loop.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  />
+                  <div className="video-overlay-shield"></div>
+                </div>
               </div>
-            </div>
-
-            {/* Floating Card 2 */}
-            <div className="float-card card-alternative" id="card-alternative">
-              <div className="card-icon-circle color-green" style={{ background: "rgba(16, 185, 129, 0.1)", color: "#10b981" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c0 2-.48 3.5-3.1 9.2A7 7 0 0 1 11 20z"></path>
-                  <path d="M9 22a1 1 0 0 1 0-2c3 0 6-3 6-6a1 1 0 0 1 2 0c0 4-4 8-8 8z"></path>
-                </svg>
-              </div>
-              <div className="card-content">
-                <div className="card-desc-only">Animal-free alternative to FBS</div>
-              </div>
-            </div>
-
-
+            </Parallax>
           </div>
         </div>
       </section>
 
       {/* Problem Statement Section (Slide 4) */}
       <section className="problem-section" style={{ background: "#0a0a0c", color: "#ffffff", padding: "100px 0", position: "relative" }}>
-        <div 
-          style={{ 
-            position: "absolute", 
-            top: 0, 
-            left: 0, 
-            width: "100%", 
-            height: "100%", 
-            backgroundImage: "url('/cells_microscope.png')", 
-            backgroundSize: "cover", 
-            backgroundPosition: "center", 
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage: "url('/cells_microscope.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
             opacity: 0.1,
             pointerEvents: "none"
-          }} 
+          }}
         />
         <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <div className="section-header" style={{ marginBottom: "50px", textAlign: "left" }}>
@@ -125,11 +118,16 @@ export default function Home() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "40px", alignItems: "center" }}>
             {/* Left Column: Image */}
             <div style={{ position: "relative", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)", boxShadow: "0 20px 40px rgba(0,0,0,0.5)" }}>
-              <img 
-                src="/extracted_images/fbs_cow_ethical.png" 
-                alt="Ethical Bovine Serum Dilemma" 
-                style={{ width: "100%", display: "block", objectFit: "cover" }} 
-              />
+              <Parallax speed={0.08}>
+                <video
+                  src="/fbs-problem.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ width: "100%", display: "block", objectFit: "cover", transform: "scale(1.15)" }}
+                />
+              </Parallax>
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(to top, rgba(10,10,12,0.95), transparent)", padding: "20px 24px" }}>
                 <span style={{ fontSize: "0.9rem", color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>Ethical & Biological Imperative</span>
               </div>
@@ -142,16 +140,16 @@ export default function Home() {
                   <span style={{ color: "var(--accent-red)" }}>🔴</span> Ethically Compromised
                 </h4>
                 <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Blood is drained from live bovine foetuses, cut from the uteruses of slaughtered pregnant cows — without anaesthesia.
+                  Extracted from blood drawn from cow fetuses during slaughter.
                 </p>
               </div>
 
               <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", padding: "24px", borderRadius: "16px", backdropFilter: "blur(12px)" }}>
                 <h4 style={{ fontSize: "1.25rem", fontWeight: 700, color: "#ffffff", display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                  <span style={{ color: "var(--accent-red)" }}>🔴</span> Extreme Lot Variability & Performance Risks
+                  <span style={{ color: "var(--accent-red)" }}>🔴</span> Extreme Lot Variability
                 </h4>
                 <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Compositions fluctuate dramatically between batches, ruining experiment reproducibility and leading to failed experiments, biopharma runs, or products.
+                  Compositions fluctuate dramatically between batches, ruining experiment reproducibility.
                 </p>
               </div>
 
@@ -268,13 +266,19 @@ export default function Home() {
             </div>
             
             <div className="solution-media" style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ position: "relative", width: "100%", maxWidth: "420px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                <img 
-                  src="/hf_20260523_061624_901e0d94-0352-4796-b721-b3c590f3f4db.png"
-                  alt="BOOSTER Vial visual"
-                  style={{ width: "100%", display: "block" }} 
-                />
-              </div>
+              <Parallax speed={0.1} style={{ width: "100%", maxWidth: "420px" }}>
+                <div style={{ position: "relative", width: "100%", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.08)" }}>
+                  <SlowVideo
+                    src="/booster-characterization.mp4"
+                    rate={0.6}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{ width: "100%", display: "block" }}
+                  />
+                </div>
+              </Parallax>
             </div>
           </div>
         </div>
@@ -348,54 +352,56 @@ export default function Home() {
                 </div>
 
                 {/* Bar Chart */}
-                <div className="chart-wrapper" style={{ position: "relative" }}>
+                <div className="chart-wrapper" style={{ position: "relative", flexDirection: "column", alignItems: "stretch" }}>
                   <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", marginBottom: "24px" }}>HEK293T cell density (×10⁶ cells/mL) after 72 hours</p>
 
-                  <div style={{ position: "relative", height: "240px", display: "flex", alignItems: "flex-end", gap: "48px", paddingLeft: "48px", paddingBottom: "40px" }}>
+                  <div style={{ position: "relative", height: "200px", marginLeft: "48px", marginBottom: "76px" }}>
                     {/* Y-axis labels */}
                     {[0, 1, 2, 3, 4, 5].map(v => (
-                      <div key={v} style={{ position: "absolute", left: 0, bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1 }}>
+                      <div key={v} style={{ position: "absolute", left: "-48px", bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1, transform: "translateY(50%)" }}>
                         {v}
                       </div>
                     ))}
                     {/* Y-axis grid lines */}
                     {[1, 2, 3, 4, 5].map(v => (
-                      <div key={v} style={{ position: "absolute", left: "48px", right: 0, bottom: `${(v / 5) * 200}px`, height: "1px", background: v === 5 ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.04)", borderTop: "1px dashed rgba(0,0,0,0.06)" }} />
+                      <div key={v} style={{ position: "absolute", left: 0, right: 0, bottom: `${(v / 5) * 200}px`, height: "1px", background: v === 5 ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.04)", borderTop: "1px dashed rgba(0,0,0,0.06)" }} />
                     ))}
 
-                    {/* FBS Bar */}
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
-                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8" }}>2.2</span>
-                      <div style={{ position: "relative", width: "80px" }}>
-                        {/* Error bar */}
-                        <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
-                          <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
-                          <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
-                          <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                    <div style={{ position: "absolute", inset: 0, display: "flex", gap: "48px" }}>
+                      {/* FBS Bar */}
+                      <div style={{ position: "relative", height: "100%", flex: 1 }}>
+                        <div style={{ position: "absolute", bottom: `calc(${(2.2 / 5) * 200}px + 8px)`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                          <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8", marginBottom: "18px" }}>2.2</span>
+                          {/* Error bar */}
+                          <div style={{ position: "absolute", top: "20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                            <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                            <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
+                            <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                          </div>
                         </div>
-                        <div style={{ height: `${(2.2 / 5) * 200}px`, background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s" }} />
+                        <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: `${(2.2 / 5) * 200}px`, background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", transition: "all 0.4s" }} />
+                        <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
                       </div>
-                      <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
+
+                      {/* Booster Bar */}
+                      <div style={{ position: "relative", height: "100%", flex: 1 }}>
+                        <div style={{ position: "absolute", bottom: `calc(${(4.0 / 5) * 200}px + 8px)`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                          <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a", marginBottom: "18px" }}>4.0</span>
+                          {/* Error bar */}
+                          <div style={{ position: "absolute", top: "20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                            <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                            <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
+                            <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                          </div>
+                        </div>
+                        <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: `${(4.0 / 5) * 200}px`, background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", transition: "all 0.4s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
+                        <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
+                      </div>
                     </div>
 
-                    {/* Booster Bar */}
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
-                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a" }}>4.0</span>
-                      <div style={{ position: "relative", width: "80px" }}>
-                        {/* Error bar */}
-                        <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
-                          <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
-                          <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
-                          <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
-                        </div>
-                        <div style={{ height: `${(4.0 / 5) * 200}px`, background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
-                      </div>
-                      <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
-                    </div>
+                    {/* X-axis baseline */}
+                    <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px" }} />
                   </div>
-
-                  {/* X-axis baseline */}
-                  <div style={{ marginLeft: "48px", height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px", marginBottom: "16px" }} />
                 </div>
 
                 {/* Chart Legend */}

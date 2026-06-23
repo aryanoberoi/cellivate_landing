@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
+import Parallax from "@/components/Parallax";
 
 export default function Tech() {
   const [activeStep, setActiveStep] = useState(0);
@@ -21,7 +22,7 @@ export default function Tech() {
       shortDesc: "From numerous sources like cell banks, off-the-shelf vials, etc.",
       desc: "We source high-quality cells from established cell banks, off-the-shelf vials, or other qualified repositories.",
       detail: "Sourcing healthy, standardized off-the-shelf source cells from cell banks ensures a robust and compliant biological starting material for Booster production.",
-      image: "/extracted_images/cell_banking_vials.png",
+      video: "/cell-source.mp4",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4.5 3h15" />
@@ -35,7 +36,7 @@ export default function Tech() {
       shortDesc: "Proprietary electromagnetic stimulation to prime EV release.",
       desc: "Stimulating cells within our customized electromagnetic field technology chamber to naturally boost signaling factor secretion.",
       detail: "Our proprietary electromagnetic field technology stimulates cells to naturally trigger specific physiological response. This activation drives modulated mitochondrial responses, resulting in selective sorting and loading of vital growth factors and signaling molecules into extracellular vesicles key for extracellular communication",
-      image: "/extracted_images/magnetic_stimulation_chamber.png",
+      video: "/magnetic-stimulation.mp4",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M5 10a7 7 0 0 1 14 0v4a3 3 0 0 1-6 0v-4a1 1 0 0 0-2 0v4a3 3 0 0 1-6 0Z" />
@@ -49,10 +50,15 @@ export default function Tech() {
       shortDesc: "Filter, analyze, and stabilize the final formulation.",
       desc: "Filter and characterize particle-rich output using orthogonal analytics, including NTA.",
       detail: "By integrating proprietary stabilizing additives, we guarantee excellent formulation stability, batch-to-batch consistency, and absolute reproducibility—fully optimizing the final product for primary cell workflows and commercial biomanufacturing.",
-      image: "/extracted_images/booster_formulation.png",
+      video: "/booster-characterization-2.mp4",
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M6 18h8M3 22h18M14 22A7 7 0 0 0 7 15v-4M9 14h2M12 9l-2-2M15 12l-5-5L14 3l5 5z" />
+          <path d="M9 2v3.5L5.5 12a3 3 0 0 0 2.6 4.5h7.8a3 3 0 0 0 2.6-4.5L15 5.5V2" />
+          <path d="M7.5 2h9" />
+          <path d="M7 14h10" />
+          <circle cx="9.5" cy="17.5" r="0.8" fill="currentColor" stroke="none" />
+          <circle cx="13" cy="18.5" r="0.6" fill="currentColor" stroke="none" />
+          <circle cx="15" cy="16.5" r="0.5" fill="currentColor" stroke="none" />
         </svg>
       )
     }
@@ -230,11 +236,17 @@ export default function Tech() {
               </div>
               
               <div style={{ borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 12px 30px rgba(0,0,0,0.04)" }}>
-                <img 
-                  src={(steps[activeStep] as any).image} 
-                  alt={steps[activeStep].title} 
-                  style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} 
-                />
+                <Parallax speed={0.08}>
+                  <video
+                    key={(steps[activeStep] as any).video}
+                    src={(steps[activeStep] as any).video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                  />
+                </Parallax>
               </div>
             </div>
           </div>
@@ -452,51 +464,53 @@ export default function Tech() {
               <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "4px" }}>HEK293T</h3>
               <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", marginBottom: "32px" }}>Cell density (×10⁶ cells/mL) after 72 hours</p>
 
-              <div style={{ position: "relative", height: "240px", display: "flex", alignItems: "flex-end", gap: "48px", paddingLeft: "48px", paddingBottom: "40px" }}>
+              <div style={{ position: "relative", height: "200px", marginLeft: "48px", marginBottom: "56px" }}>
                 {/* Y-axis labels */}
                 {[0, 1, 2, 3, 4, 5].map(v => (
-                  <div key={v} style={{ position: "absolute", left: 0, bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1 }}>
+                  <div key={v} style={{ position: "absolute", left: "-48px", bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1, transform: "translateY(50%)" }}>
                     {v}
                   </div>
                 ))}
                 {/* Y-axis grid lines */}
                 {[1, 2, 3, 4, 5].map(v => (
-                  <div key={v} style={{ position: "absolute", left: "48px", right: 0, bottom: `${(v / 5) * 200}px`, height: "1px", background: v === 5 ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.04)", borderTop: "1px dashed rgba(0,0,0,0.06)" }} />
+                  <div key={v} style={{ position: "absolute", left: 0, right: 0, bottom: `${(v / 5) * 200}px`, height: "1px", background: v === 5 ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.04)", borderTop: "1px dashed rgba(0,0,0,0.06)" }} />
                 ))}
 
-                {/* FBS Bar */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
-                  <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8" }}>2.2</span>
-                  <div style={{ position: "relative", width: "80px" }}>
-                    {/* Error bar */}
-                    <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
-                      <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
-                      <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
-                      <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                <div style={{ position: "absolute", inset: 0, display: "flex", gap: "48px" }}>
+                  {/* FBS Bar */}
+                  <div style={{ position: "relative", height: "100%", flex: 1 }}>
+                    <div style={{ position: "absolute", bottom: `calc(${(2.2 / 5) * 200}px + 8px)`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8", marginBottom: "18px" }}>2.2</span>
+                      {/* Error bar */}
+                      <div style={{ position: "absolute", top: "20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                        <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                        <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
+                        <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
+                      </div>
                     </div>
-                    <div style={{ height: `${(2.2 / 5) * 200}px`, background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s" }} />
+                    <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: `${(2.2 / 5) * 200}px`, background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", transition: "all 0.4s" }} />
+                    <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
                   </div>
-                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
+
+                  {/* Booster Bar */}
+                  <div style={{ position: "relative", height: "100%", flex: 1 }}>
+                    <div style={{ position: "absolute", bottom: `calc(${(4.0 / 5) * 200}px + 8px)`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a", marginBottom: "18px" }}>4.0</span>
+                      {/* Error bar */}
+                      <div style={{ position: "absolute", top: "20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                        <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                        <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
+                        <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
+                      </div>
+                    </div>
+                    <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: `${(4.0 / 5) * 200}px`, background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", transition: "all 0.4s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
+                    <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
+                  </div>
                 </div>
 
-                {/* Booster Bar */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
-                  <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a" }}>4.0</span>
-                  <div style={{ position: "relative", width: "80px" }}>
-                    {/* Error bar */}
-                    <div style={{ position: "absolute", top: "-20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
-                      <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
-                      <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
-                      <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
-                    </div>
-                    <div style={{ height: `${(4.0 / 5) * 200}px`, background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", width: "100%", transition: "all 0.4s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
-                  </div>
-                  <span style={{ fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
-                </div>
+                {/* X-axis baseline */}
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px" }} />
               </div>
-
-              {/* X-axis baseline */}
-              <div style={{ marginLeft: "48px", height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px", marginBottom: "16px" }} />
 
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginLeft: "48px" }}>
                 <div style={{ width: "12px", height: "12px", borderRadius: "3px", background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)" }} />

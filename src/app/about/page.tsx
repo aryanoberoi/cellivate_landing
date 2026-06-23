@@ -269,8 +269,8 @@ export default function About() {
                     </div>
                     
                     <div className="flashcard-title-row">
-                      <span className="vm-label" style={{ margin: 0 }}>Our Vision</span>
-                      <h3 className="flashcard-front-title">What We See</h3>
+                      <span className="vm-label" style={{ margin: 0 }}>What We See</span>
+                      <h3 className="flashcard-front-title">Our Vision</h3>
                     </div>
 
                     <div className="flashcard-icon-container">
@@ -327,8 +327,8 @@ export default function About() {
                     </div>
 
                     <div className="flashcard-title-row">
-                      <span className="vm-label" style={{ margin: 0 }}>Our Mission</span>
-                      <h3 className="flashcard-front-title">What We Do</h3>
+                      <span className="vm-label" style={{ margin: 0 }}>What We Do</span>
+                      <h3 className="flashcard-front-title">Our Mission</h3>
                     </div>
 
                     <div className="flashcard-icon-container">
