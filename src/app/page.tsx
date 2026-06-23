@@ -80,12 +80,12 @@ export default function Home() {
                 <div className="video-container-glass">
                   <video
                     className="cellivate-loop-video"
-                    src="/hero-ev-loop.mp4"
+                    src="/ev%20no%20bg.mp4"
                     autoPlay
                     loop
                     muted
                     playsInline
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "55% center" }}
                   />
                   <div className="video-overlay-shield"></div>
                 </div>
@@ -242,7 +242,7 @@ export default function Home() {
       {/* Solution Section (Meet Booster) */}
       <section className="solution-section" style={{ background: "#101012", color: "#ffffff", padding: "100px 0", position: "relative", overflow: "hidden" }}>
         <Reveal className="section-container" style={{ position: "relative", zIndex: 2 }}>
-          <div className="solution-layout" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "center" }}>
+          <div className="solution-layout" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "stretch" }}>
             <div className="solution-content">
               <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Tomorrow's Standard</span>
               <h2 style={{ fontSize: "3rem", fontWeight: 800, color: "#ffffff", margin: "10px 0 24px 0" }}>
@@ -271,8 +271,8 @@ export default function Home() {
             </div>
             
             <div className="solution-media" style={{ display: "flex", justifyContent: "center" }}>
-              <Parallax speed={0.1} style={{ width: "100%", maxWidth: "420px" }}>
-                <div style={{ position: "relative", width: "100%", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              <Parallax speed={0.1} style={{ width: "100%", maxWidth: "600px", height: "100%" }}>
+                <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.5)", border: "1px solid rgba(255,255,255,0.08)" }}>
                   <SlowVideo
                     src="/booster-characterization.mp4"
                     rate={0.6}
@@ -280,7 +280,7 @@ export default function Home() {
                     loop
                     muted
                     playsInline
-                    style={{ width: "100%", display: "block" }}
+                    style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
                   />
                 </div>
               </Parallax>

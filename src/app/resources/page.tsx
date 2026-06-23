@@ -8,14 +8,6 @@ export default function Resources() {
   const [showSignup, setShowSignup] = useState(false);
   const actionPanelRef = useRef<HTMLDivElement>(null);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    designation: "",
-    email: "",
-    company: ""
-  });
-  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "error">("idle");
-
   const books = [
     {
       id: "fbs-problem",
@@ -62,8 +54,6 @@ export default function Resources() {
     } else {
       setSelectedBookIndex(idx);
       setShowSignup(true);
-      setFormStatus("idle");
-      setFormData({ name: "", designation: "", email: "", company: "" });
     }
   };
 
@@ -73,32 +63,13 @@ export default function Resources() {
     }
   }, [selectedBookIndex, showSignup]);
 
-  const handleUnlockSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleConfirmSubmitted = () => {
     if (selectedBookIndex === null) return;
-    setFormStatus("submitting");
-
-    const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_EBOOK_ID || "mbdbdyyj";
     const book = books[selectedBookIndex];
-
-    try {
-      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ ...formData, resource: book.title, source: "Resource Unlock Form" })
-      });
-
-      if (response.ok) {
-        const updated = new Set(unlockedBooks).add(book.id);
-        setUnlockedBooks(updated);
-        localStorage.setItem("cellivate_unlocked_books", JSON.stringify([...updated]));
-        setShowSignup(false);
-      } else {
-        setFormStatus("error");
-      }
-    } catch {
-      setFormStatus("error");
-    }
+    const updated = new Set(unlockedBooks).add(book.id);
+    setUnlockedBooks(updated);
+    localStorage.setItem("cellivate_unlocked_books", JSON.stringify([...updated]));
+    setShowSignup(false);
   };
 
   const currentBook = selectedBookIndex !== null ? books[selectedBookIndex] : null;
@@ -185,64 +156,31 @@ export default function Resources() {
                 Access "{currentBook.title}"
               </h2>
               <p style={{ color: "var(--brand-light)", fontSize: "0.95rem", lineHeight: "1.5" }}>
-                Enter your details to instantly unlock this publication.
+                Fill out the form below, then confirm your submission to unlock this publication.
               </p>
             </div>
 
-            <form onSubmit={handleUnlockSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "480px", margin: "0 auto" }}>
-              {formStatus === "error" && (
-                <div style={{ background: "#fef2f2", border: "1px solid #fecaca", padding: "12px", borderRadius: "8px", color: "#991b1b", fontSize: "0.9rem" }}>
-                  ⚠️ Something went wrong. Please try again or contact us at admin@cellivatetech.com.
-                </div>
-              )}
+            <div style={{ display: "flex", flexDirection: "column", gap: "20px", alignItems: "center" }}>
+              <iframe
+                width="640px"
+                height="480px"
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=_ga8-FgCCk2_6VVmIf-JBK2ZpxYSDJlLkaUx2VmawQ1UN0tTMThUUUxUTjJIOElPVDJYVllZREROSy4u&embed=true"
+                frameBorder="0"
+                marginWidth={0}
+                marginHeight={0}
+                style={{ border: "none", maxWidth: "100%", maxHeight: "100vh", width: "100%" }}
+                allowFullScreen
+              />
 
-              <div>
-                <label htmlFor="name" style={{ display: "block", fontWeight: 600, marginBottom: "8px", color: "var(--brand-primary)" }}>Full Name</label>
-                <input type="text" id="name" required value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  style={{ width: "100%", padding: "14px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: "12px", fontSize: "1rem" }}
-                  placeholder="Dr. Sarah Jenkins" />
-              </div>
-
-              <div>
-                <label htmlFor="designation" style={{ display: "block", fontWeight: 600, marginBottom: "8px", color: "var(--brand-primary)" }}>Designation / Title</label>
-                <input type="text" id="designation" required value={formData.designation}
-                  onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
-                  style={{ width: "100%", padding: "14px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: "12px", fontSize: "1rem" }}
-                  placeholder="Research Scientist, Lab Director, etc." />
-              </div>
-
-              <div>
-                <label htmlFor="email" style={{ display: "block", fontWeight: 600, marginBottom: "8px", color: "var(--brand-primary)" }}>Professional Email</label>
-                <input type="email" id="email" required value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  style={{ width: "100%", padding: "14px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: "12px", fontSize: "1rem" }}
-                  placeholder="sarah.jenkins@biotech.com" />
-              </div>
-
-              <div>
-                <label htmlFor="company" style={{ display: "block", fontWeight: 600, marginBottom: "8px", color: "var(--brand-primary)" }}>Company / Institution</label>
-                <input type="text" id="company" required value={formData.company}
-                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  style={{ width: "100%", padding: "14px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: "12px", fontSize: "1rem" }}
-                  placeholder="Institute of Molecular Biology" />
-              </div>
-
-              <div style={{ display: "flex", gap: "12px" }}>
-                <button type="submit" disabled={formStatus === "submitting"}
+              <div style={{ display: "flex", gap: "12px", width: "100%", maxWidth: "480px" }}>
+                <button type="button" onClick={handleConfirmSubmitted}
                   style={{
                     flex: 1,
                     background: "var(--accent-red)", color: "#ffffff", border: "none",
                     padding: "16px", borderRadius: "30px", fontSize: "1rem", fontWeight: 600,
-                    cursor: "pointer", transition: "all 0.3s", display: "flex", justifyContent: "center",
-                    alignItems: "center", gap: "10px", boxShadow: "0 10px 25px rgba(217,35,52,0.2)"
+                    cursor: "pointer", transition: "all 0.3s", boxShadow: "0 10px 25px rgba(217,35,52,0.2)"
                   }}>
-                  {formStatus === "submitting" ? (
-                    <>
-                      <div style={{ width: "18px", height: "18px", border: "2px solid #ffffff", borderTopColor: "transparent", borderRadius: "50%", animation: "spin 1s linear infinite" }} />
-                      Unlocking...
-                    </>
-                  ) : "Unlock & Read"}
+                  I've Submitted — Unlock & Read
                 </button>
                 <button type="button" onClick={() => { setShowSignup(false); setSelectedBookIndex(null); }}
                   style={{
@@ -253,11 +191,7 @@ export default function Resources() {
                   Cancel
                 </button>
               </div>
-
-              <p style={{ color: "#94a3b8", fontSize: "0.8rem", textAlign: "center", lineHeight: "1.4" }}>
-                By submitting, you agree to receive technical validation updates from Cellivate Technologies. You can unsubscribe at any time.
-              </p>
-            </form>
+            </div>
           </div>
         )}
 
@@ -289,10 +223,6 @@ export default function Resources() {
           </div>
         )}
       </div>
-
-      <style jsx global>{`
-        @keyframes spin { to { transform: rotate(360deg); } }
-      `}</style>
     </main>
   );
 }
