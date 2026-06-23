@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Parallax from "@/components/Parallax";
 import SlowVideo from "@/components/SlowVideo";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
@@ -107,7 +108,7 @@ export default function Home() {
             pointerEvents: "none"
           }}
         />
-        <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
+        <Reveal className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <div className="section-header" style={{ marginBottom: "50px", textAlign: "left" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>The Problem</span>
             <h2 style={{ fontSize: "clamp(2rem, 4vw, 2.8rem)", fontWeight: 800, color: "#ffffff", marginTop: "10px" }}>
@@ -163,12 +164,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Why Problem Section (Slide 3) */}
       <section className="why-problem-section" style={{ padding: "100px 0", background: "var(--bg-main)" }}>
-        <div className="section-container">
+        <Reveal className="section-container">
           <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 60px auto" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Industry Hurdles</span>
             <h2 style={{ fontSize: "clamp(2rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
@@ -231,12 +232,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Solution Section (Meet Booster) */}
       <section className="solution-section" style={{ background: "#101012", color: "#ffffff", padding: "100px 0", position: "relative", overflow: "hidden" }}>
-        <div className="section-container" style={{ position: "relative", zIndex: 2 }}>
+        <Reveal className="section-container" style={{ position: "relative", zIndex: 2 }}>
           <div className="solution-layout" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "60px", alignItems: "center" }}>
             <div className="solution-content">
               <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Tomorrow's Standard</span>
@@ -281,12 +282,12 @@ export default function Home() {
               </Parallax>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Product Overview Section */}
       <section className="product-section" style={{ padding: "100px 0", background: "var(--bg-main)" }}>
-        <div className="section-container">
+        <Reveal className="section-container">
           <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto 60px auto" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Our Offerings</span>
             <h2 style={{ fontSize: "clamp(2rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
@@ -314,12 +315,12 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Validated Performance Section */}
       <section id="validation" className="proven-results-section" style={{ position: "relative", padding: "100px 0", background: "#ffffff" }}>
-        <div className="section-container">
+        <Reveal className="section-container">
           {/* Left-aligned Header */}
           <div className="section-header-left">
             <div className="section-badge-group">
@@ -574,7 +575,7 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );
