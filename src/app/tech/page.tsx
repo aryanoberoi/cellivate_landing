@@ -2,11 +2,15 @@
 
 import React, { useState, useRef } from "react";
 import Parallax from "@/components/Parallax";
+import { useInView } from "@/components/useInView";
+import StaggerReveal from "@/components/StaggerReveal";
 
 export default function Tech() {
   const [activeStep, setActiveStep] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { ref: chartRef, inView: chartInView } = useInView<HTMLDivElement>(0.4);
+  const { ref: tableRef, inView: tableInView } = useInView<HTMLTableElement>(0.15);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -340,7 +344,7 @@ export default function Tech() {
 
             <div className="cell-list-container">
               <h4 className="cell-list-title">Tested Across Diverse Cell Types</h4>
-              <div className="cell-list-items">
+              <StaggerReveal className="cell-list-items">
                 {/* Cell Item 1 */}
                 <div className="cell-list-item hover-glow-purple">
                   <div className="cell-item-icon-circle text-purple">
@@ -439,7 +443,7 @@ export default function Tech() {
                     <h5 className="cell-item-title" style={{ color: "var(--brand-primary)", fontWeight: 700, margin: 0 }}>Cultivated Meat Cells</h5>
                   </div>
                 </div>
-              </div>
+              </StaggerReveal>
             </div>
           </div>
         </div>
@@ -464,7 +468,7 @@ export default function Tech() {
               <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "4px" }}>HEK293T</h3>
               <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", marginBottom: "32px" }}>Cell density (×10⁶ cells/mL) after 72 hours</p>
 
-              <div style={{ position: "relative", height: "200px", marginLeft: "48px", marginBottom: "56px" }}>
+              <div ref={chartRef} style={{ position: "relative", height: "280px", marginLeft: "48px", marginBottom: "56px" }}>
                 {/* Y-axis labels */}
                 {[0, 1, 2, 3, 4, 5].map(v => (
                   <div key={v} style={{ position: "absolute", left: "-48px", bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1, transform: "translateY(50%)" }}>
@@ -476,34 +480,34 @@ export default function Tech() {
                   <div key={v} style={{ position: "absolute", left: 0, right: 0, bottom: `${(v / 5) * 200}px`, height: "1px", background: v === 5 ? "rgba(0,0,0,0.08)" : "rgba(0,0,0,0.04)", borderTop: "1px dashed rgba(0,0,0,0.06)" }} />
                 ))}
 
-                <div style={{ position: "absolute", inset: 0, display: "flex", gap: "48px" }}>
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "200px", display: "flex", gap: "48px" }}>
                   {/* FBS Bar */}
                   <div style={{ position: "relative", height: "100%", flex: 1 }}>
-                    <div style={{ position: "absolute", bottom: `calc(${(2.2 / 5) * 200}px + 8px)`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8", marginBottom: "18px" }}>2.2</span>
+                    <div style={{ position: "absolute", bottom: `${(2.2 / 5) * 200}px`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column-reverse", alignItems: "center", opacity: chartInView ? 1 : 0, transition: "opacity 0.4s ease 0.3s" }}>
                       {/* Error bar */}
-                      <div style={{ position: "absolute", top: "20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
                         <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
                         <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
                         <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
                       </div>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8", marginBottom: "6px" }}>2.2</span>
                     </div>
-                    <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: `${(2.2 / 5) * 200}px`, background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", transition: "all 0.4s" }} />
+                    <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: chartInView ? `${(2.2 / 5) * 200}px` : "0px", background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", transition: "height 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }} />
                     <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
                   </div>
 
                   {/* Booster Bar */}
                   <div style={{ position: "relative", height: "100%", flex: 1 }}>
-                    <div style={{ position: "absolute", bottom: `calc(${(4.0 / 5) * 200}px + 8px)`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a", marginBottom: "18px" }}>4.0</span>
+                    <div style={{ position: "absolute", bottom: `${(4.0 / 5) * 200}px`, left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column-reverse", alignItems: "center", opacity: chartInView ? 1 : 0, transition: "opacity 0.4s ease 0.45s" }}>
                       {/* Error bar */}
-                      <div style={{ position: "absolute", top: "20px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
+                      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 0 }}>
                         <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
                         <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
                         <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
                       </div>
+                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a", marginBottom: "6px" }}>4.0</span>
                     </div>
-                    <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: `${(4.0 / 5) * 200}px`, background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", transition: "all 0.4s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
+                    <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: chartInView ? `${(4.0 / 5) * 200}px` : "0px", background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", transition: "height 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
                     <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
                   </div>
                 </div>
@@ -558,7 +562,7 @@ export default function Tech() {
           </div>
 
           <div className="tech-table-wrap" style={{ overflowX: "auto", borderRadius: "20px", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 15px 40px rgba(0,0,0,0.02)", WebkitOverflowScrolling: "touch" }}>
-            <table style={{ width: "100%", borderCollapse: "collapse", background: "#ffffff", textAlign: "left" }}>
+            <table ref={tableRef} className={`stagger-rows ${tableInView ? "is-visible" : ""}`} style={{ width: "100%", borderCollapse: "collapse", background: "#ffffff", textAlign: "left" }}>
               <thead>
                 <tr style={{ background: "#121214", color: "#ffffff" }}>
                   <th style={{ padding: "20px", fontWeight: 600 }}>Parameter</th>

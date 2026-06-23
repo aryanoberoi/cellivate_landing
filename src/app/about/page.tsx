@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import StaggerReveal from "@/components/StaggerReveal";
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -597,7 +598,7 @@ export default function About() {
           <div className="about-section-header">
             <h2 className="about-section-title" style={{ color: "#5131A5" }}>Partners and Evangelists</h2>
           </div>
-          <div className="about-partners-grid">
+          <StaggerReveal className="about-partners-grid">
             {[
               { name: "CapitalCode", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382582-ZL2F6ZZXQVZR5EPQSM4J/CapitalCode.png" },
               { name: "500 Startups", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382590-W8V2G7J95EFKEHTZMJUC/500+Startups.png" },
@@ -621,7 +622,7 @@ export default function About() {
                 <img src={partner.url} alt={partner.name} />
               </div>
             ))}
-          </div>
+          </StaggerReveal>
 
           <div className="about-cta-block">
             <h3 className="about-cta-heading">Let's talk about the future!</h3>
