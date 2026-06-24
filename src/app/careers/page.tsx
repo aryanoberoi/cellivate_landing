@@ -19,9 +19,8 @@ export default function Careers() {
             <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
               <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>✉️</span>
               <div>
-                <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Questions?</h4>
                 <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0 }}>
-                  <a href="mailto:admin@cellivatetech.com" style={{ color: "inherit", textDecoration: "none" }}>admin@cellivatetech.com</a>
+                  Send your resume to <a href="mailto:admin@cellivatetech.com" style={{ color: "inherit", textDecoration: "none" }}>admin@cellivatetech.com</a>
                 </p>
               </div>
             </div>
