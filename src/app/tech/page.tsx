@@ -78,7 +78,7 @@ export default function Tech() {
           <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.85rem" }}>The Platform</span>
           <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, marginTop: "10px" }}>Powering Booster Production</h1>
           <p style={{ fontSize: "1.15rem", color: "#cbd5e1", maxWidth: "700px", margin: "16px auto 0 auto", lineHeight: "1.6" }}>
-            Serum Extracted from bovine foetuses in slaughterhouses to a platform for naturally programmable extracellular signaling
+            Serum Extracted from bovine fetuses in slaughterhouses to a platform for naturally programmable extracellular signaling
           </p>
         </div>
 
