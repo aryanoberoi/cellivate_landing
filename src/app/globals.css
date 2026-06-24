@@ -729,6 +729,7 @@ body {
     
     .video-perspective-wrapper {
         width: 80%;
+        margin-left: 10%;
     }
     
     .float-card {
