@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
+import Reveal from "@/components/Reveal";
 
 export default function Contact() {
   return (
     <main style={{ minHeight: "100vh", background: "var(--bg-main)", padding: "80px 0" }}>
       <div className="section-container">
         <div className="page-two-col-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "60px", alignItems: "start" }}>
-          <div>
+          <Reveal>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Get In Touch</span>
             <h1 style={{ fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px", marginBottom: "20px" }}>
               Contact Our Experts
@@ -17,7 +18,7 @@ export default function Contact() {
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-              <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
+              <div className="lift-card" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
                 <img src="https://flagcdn.com/w40/sg.png" alt="Singapore flag" style={{ width: "28px", height: "21px", marginTop: "2px", borderRadius: "3px", objectFit: "cover", border: "1px solid rgba(0,0,0,0.12)" }} />
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Singapore Office</h4>
@@ -27,7 +28,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
+              <div className="lift-card" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
                 <img src="https://flagcdn.com/w40/au.png" alt="Australia flag" style={{ width: "28px", height: "21px", marginTop: "2px", borderRadius: "3px", objectFit: "cover", border: "1px solid rgba(0,0,0,0.12)" }} />
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Australia Office</h4>
@@ -37,7 +38,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
+              <div className="lift-card" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
                 <img src="https://flagcdn.com/w40/in.png" alt="India flag" style={{ width: "28px", height: "21px", marginTop: "2px", borderRadius: "3px", objectFit: "cover", border: "1px solid rgba(0,0,0,0.12)" }} />
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>India Office</h4>
@@ -47,7 +48,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
+              <div className="lift-card" style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
                 <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>✉️</span>
                 <div>
                   <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0" }}>Email Address</h4>
@@ -57,9 +58,9 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", borderRadius: "24px", padding: "40px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)" }}>
+          <Reveal delay={0.15} style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", borderRadius: "24px", padding: "40px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)" }}>
             <iframe
               width="640px"
               height="480px"
@@ -70,7 +71,7 @@ export default function Contact() {
               style={{ border: "none", maxWidth: "100%", maxHeight: "100vh", width: "100%" }}
               allowFullScreen
             />
-          </div>
+          </Reveal>
         </div>
       </div>
     </main>

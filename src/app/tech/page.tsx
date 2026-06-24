@@ -4,6 +4,7 @@ import React, { useState, useRef } from "react";
 import Parallax from "@/components/Parallax";
 import { useInView } from "@/components/useInView";
 import StaggerReveal from "@/components/StaggerReveal";
+import Reveal from "@/components/Reveal";
 
 export default function Tech() {
   const [activeStep, setActiveStep] = useState(0);
@@ -97,12 +98,12 @@ export default function Tech() {
       {/* Visual 3-Step Pipeline */}
       <section style={{ padding: "100px 0" }}>
         <div className="section-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <Reveal style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Process Workflow</span>
             <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
               Streamlined 3-Step Booster Production
             </h2>
-          </div>
+          </Reveal>
 
           {/* Horizontal Pipeline Cards */}
           <div className="tech-steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", position: "relative", marginBottom: "40px" }}>
@@ -452,7 +453,7 @@ export default function Tech() {
       {/* Validation Data */}
       <section style={{ padding: "100px 0", background: "var(--bg-main)" }}>
         <div className="section-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <Reveal style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>In-House Data</span>
             <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
               Booster vs FBS — Cell Growth Results
@@ -460,7 +461,7 @@ export default function Tech() {
             <p style={{ color: "var(--brand-light)", fontSize: "1.05rem", maxWidth: "600px", margin: "16px auto 0 auto", lineHeight: "1.6" }}>
               Head-to-head performance across HEK293T cells shows nearly 2× higher cell density with Booster compared to FBS at equivalent concentrations.
             </p>
-          </div>
+          </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: "40px", alignItems: "center" }}>
             {/* SVG Bar Chart */}
@@ -554,12 +555,12 @@ export default function Tech() {
       {/* Competitive Landscape Table */}
       <section style={{ padding: "100px 0", background: "#fdfdfb" }}>
         <div className="section-container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <Reveal style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>The Standard Matrix</span>
             <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
               Competitive Technical Landscape
             </h2>
-          </div>
+          </Reveal>
 
           <div className="tech-table-wrap" style={{ overflowX: "auto", borderRadius: "20px", border: "1px solid rgba(0,0,0,0.06)", boxShadow: "0 15px 40px rgba(0,0,0,0.02)", WebkitOverflowScrolling: "touch" }}>
             <table ref={tableRef} className={`stagger-rows ${tableInView ? "is-visible" : ""}`} style={{ width: "100%", borderCollapse: "collapse", background: "#ffffff", textAlign: "left" }}>

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import StaggerReveal from "@/components/StaggerReveal";
+import Reveal from "@/components/Reveal";
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -378,7 +379,7 @@ export default function About() {
       {/* ── Team Group Photo ──
       <section className="about-section">
         <div className="section-container">
-          <div className="about-team-photo-wrap">
+          <Reveal className="about-team-photo-wrap">
             <img
               src="https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/53ecd113-b160-44d3-87fc-559829b2d895/IMG_5079.jpg"
               alt="Cellivate Team Group Photo"
@@ -390,7 +391,7 @@ export default function About() {
                 Driven by a shared mission to revolutionize cell-based solutions for biopharma, cell therapy, skincare, and sustainable research.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
       ── */}
@@ -398,11 +399,11 @@ export default function About() {
       {/* ── Core Team ── */}
       <section className="about-section" style={{ background: "#fcfcfa" }}>
         <div className="section-container">
-          <div className="about-section-header">
+          <Reveal className="about-section-header">
             <span className="about-eyebrow">Core Team</span>
             <h2 className="about-section-title">Meet Our Team</h2>
-          </div>
-          <div className="about-team-grid">
+          </Reveal>
+          <StaggerReveal className="about-team-grid">
             {team.map((member, idx) => (
               <div key={idx} className="about-person-card">
                 <div className="about-avatar">
@@ -430,17 +431,17 @@ export default function About() {
                 </div>
               </div>
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </section>
 
       {/* ── Traction & Recognition ── */}
       <section className="about-section about-dark-section" style={{ background: "#121214", color: "#ffffff", padding: "100px 0" }}>
         <div className="section-container">
-          <div className="about-section-header" style={{ textAlign: "center", marginBottom: "60px" }}>
+          <Reveal className="about-section-header" style={{ textAlign: "center", marginBottom: "60px" }}>
             <span className="about-eyebrow" style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px" }}>Traction & Recognition</span>
             <h2 className="about-section-title" style={{ color: "#ffffff", fontSize: "2.6rem", fontWeight: 800, marginTop: "10px" }}>Awards & Media Coverage</h2>
-          </div>
+          </Reveal>
 
           {/* Tab Selection */}
           <div style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "50px", flexWrap: "wrap" }}>
@@ -482,10 +483,11 @@ export default function About() {
 
           {activeTab === "awards" ? (
             /* Awards Grid */
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
+            <StaggerReveal style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
               {awards.map((award, idx) => (
                 <div
                   key={idx}
+                  className="lift-card"
                   style={{
                     background: "rgba(255,255,255,0.03)",
                     border: "1px solid rgba(255,255,255,0.06)",
@@ -524,13 +526,14 @@ export default function About() {
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerReveal>
           ) : (
             /* Media Grid */
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
+            <StaggerReveal style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px" }}>
               {recognitions.map((rec, idx) => (
                 <div
                   key={idx}
+                  className="lift-card"
                   style={{
                     background: "rgba(255,255,255,0.03)",
                     border: "1px solid rgba(255,255,255,0.06)",
@@ -587,7 +590,7 @@ export default function About() {
                   </div>
                 </div>
               ))}
-            </div>
+            </StaggerReveal>
           )}
         </div>
       </section>
@@ -595,9 +598,9 @@ export default function About() {
       {/* ── Partners ── */}
       <section className="about-section" style={{ background: "#ffffff" }}>
         <div className="section-container">
-          <div className="about-section-header">
+          <Reveal className="about-section-header">
             <h2 className="about-section-title" style={{ color: "#5131A5" }}>Partners and Evangelists</h2>
-          </div>
+          </Reveal>
           <StaggerReveal className="about-partners-grid">
             {[
               { name: "CapitalCode", url: "https://images.squarespace-cdn.com/content/v1/6478636860dbee4d10604c78/1685611382582-ZL2F6ZZXQVZR5EPQSM4J/CapitalCode.png" },

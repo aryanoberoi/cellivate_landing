@@ -4327,3 +4327,69 @@ table.stagger-rows.is-visible tbody tr:nth-child(n+5) { transition-delay: 320ms;
         transform: translateY(3px);
     }
 }
+
+/* ==========================================================================
+   GLOBAL MOTION POLISH
+   Transitions & animations only — resting appearance is intentionally
+   left unchanged. Effects are revealed on hover/scroll/focus.
+   ========================================================================== */
+
+/* Smooth defaults for interactive elements that don't define their own
+   transition. Class- and inline-level transitions still win, so this only
+   fills the gaps without altering existing motion. */
+a,
+button,
+input,
+textarea,
+select,
+summary {
+    transition: color 0.25s ease, background-color 0.25s ease,
+        border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Reusable hover-lift for otherwise-static cards. Resting state is untouched;
+   the lift + soft shadow only appear on hover. */
+.lift-card {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.35s ease;
+    will-change: transform;
+}
+
+.lift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -12px rgba(31, 23, 76, 0.16);
+}
+
+/* Subtle press feedback for buttons/links across the site */
+button:active,
+a:active {
+    transform: translateY(1px);
+}
+
+/* Gentle focus-visible ring for keyboard users (no change for mouse users) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid rgba(217, 35, 52, 0.5);
+    outline-offset: 2px;
+}
+
+/* Respect users who prefer reduced motion — disable non-essential motion. */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
