@@ -145,7 +145,7 @@ export default function Home() {
                   <span style={{ color: "var(--accent-red)" }}>🔴</span> Ethically Compromised
                 </h4>
                 <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Extracted from the blood of cow fetuses obtained during slaughter
+                  Extracted from the blood of cow fetus obtained during slaughter
                 </p>
               </div>
 
