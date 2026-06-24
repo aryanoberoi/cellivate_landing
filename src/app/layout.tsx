@@ -56,7 +56,7 @@ export default function RootLayout({
               <Link href="/pilot" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Pilot Program</Link>
               <Link href="/about" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>About</Link>
               <Link href="/contact" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Contact</Link>
-              <Link href="/resources" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Resources</Link>
+              {/* <Link href="/resources" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Resources</Link> */}
               <Link href="/careers" className="nav-link" style={{ fontWeight: 500, color: "var(--brand-dark)", textDecoration: "none", fontSize: "0.95rem", transition: "color 0.2s" }}>Careers</Link>
             </nav>
 

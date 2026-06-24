@@ -26,7 +26,7 @@ export default function MobileNav() {
             <Link href="/pilot" className="mobile-nav-link" onClick={() => setOpen(false)}>Pilot Program</Link>
             <Link href="/about" className="mobile-nav-link" onClick={() => setOpen(false)}>About</Link>
             <Link href="/contact" className="mobile-nav-link" onClick={() => setOpen(false)}>Contact</Link>
-            <Link href="/resources" className="mobile-nav-link" onClick={() => setOpen(false)}>Resources</Link>
+            {/* <Link href="/resources" className="mobile-nav-link" onClick={() => setOpen(false)}>Resources</Link> */}
             <Link href="/careers" className="mobile-nav-link" onClick={() => setOpen(false)}>Careers</Link>
           </nav>
         </div>
