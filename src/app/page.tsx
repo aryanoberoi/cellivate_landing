@@ -193,7 +193,7 @@ export default function Home() {
               </div>
               <div style={{ textAlign: "center" }}>
                 <h4 style={{ fontWeight: 700, color: "var(--brand-primary)", margin: "0 0 4px 0", fontSize: "1.1rem" }}>FBS Sourcing Reality</h4>
-                <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0 }}>Diagram illustrating the collection process from animal fetuses during harvesting.</p>
+                <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: 0 }}>Representative image of animal foetuses used for blood draw.</p>
               </div>
             </div>
 
