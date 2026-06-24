@@ -16,12 +16,13 @@ export default function Careers() {
               We're building animal-free cell culture solutions for the future of biotech. If you're passionate about science, sustainability, and solving hard problems, we'd love to hear from you.
             </p>
 
-            <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "20px", borderRadius: "12px", display: "flex", alignItems: "flex-start", gap: "16px" }}>
-              <span style={{ fontSize: "1.5rem", marginTop: "2px" }}>✉️</span>
+            <div style={{ background: "linear-gradient(135deg, #f8f9ff 0%, #fff 100%)", border: "1px solid rgba(0,0,0,0.08)", padding: "24px 28px", borderRadius: "16px", display: "flex", alignItems: "center", gap: "18px" }}>
+              <div style={{ background: "var(--accent-red)", borderRadius: "12px", width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
               <div>
-                <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", margin: 0 }}>
-                  Send your resume to <a href="mailto:admin@cellivatetech.com" style={{ color: "inherit", textDecoration: "none" }}>admin@cellivatetech.com</a>
-                </p>
+                <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", margin: "0 0 4px 0", textTransform: "uppercase", letterSpacing: "0.8px", fontWeight: 600 }}>Send your resume to</p>
+                <a href="mailto:admin@cellivatetech.com" style={{ color: "var(--brand-primary)", textDecoration: "none", fontWeight: 700, fontSize: "1rem" }}>admin@cellivatetech.com</a>
               </div>
             </div>
           </div>
