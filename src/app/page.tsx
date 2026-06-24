@@ -32,7 +32,7 @@ export default function Home() {
             </h1>
 
             <p className="hero-subtitle">
-              Booster is Cellivate's EV-based alternative to FBS, designed to improve cell growth, consistency, and sustainability across advanced cell culture applications.
+              Booster is Cellivate's Extra-cellular Vesicle (EV)-based alternative to FBS, designed to improve cell growth, consistency, and sustainability across advanced cell culture applications.
             </p>
 
             <div className="hero-actions">
@@ -145,7 +145,7 @@ export default function Home() {
                   <span style={{ color: "var(--accent-red)" }}>🔴</span> Ethically Compromised
                 </h4>
                 <p style={{ color: "#cbd5e1", fontSize: "0.95rem", lineHeight: "1.5", margin: 0 }}>
-                  Extracted from blood drawn from cow fetuses during slaughter.
+                  Extracted from the blood of cow fetuses obtained during slaughter
                 </p>
               </div>
 
@@ -358,9 +358,11 @@ export default function Home() {
 
                 {/* Bar Chart */}
                 <div className="chart-wrapper" style={{ position: "relative", flexDirection: "column", alignItems: "stretch" }}>
-                  <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", marginBottom: "24px" }}>HEK293T cell density (×10⁶ cells/mL) after 72 hours</p>
-
-                  <div ref={chartRef} style={{ position: "relative", height: "280px", marginLeft: "48px", marginBottom: "76px" }}>
+                  <div style={{ display: "flex", alignItems: "stretch" }}>
+                    <div style={{ writingMode: "vertical-lr", transform: "rotate(180deg)", fontSize: "0.7rem", color: "var(--brand-light)", fontWeight: 600, textAlign: "center", marginRight: "4px", paddingBottom: "76px" }}>
+                      Normalized Cell Counts
+                    </div>
+                  <div ref={chartRef} style={{ position: "relative", height: "280px", flex: 1, marginLeft: "48px", marginBottom: "76px" }}>
                     {/* Y-axis labels */}
                     {[0, 1, 2, 3, 4, 5].map(v => (
                       <div key={v} style={{ position: "absolute", left: "-48px", bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1, transform: "translateY(50%)" }}>
@@ -382,7 +384,6 @@ export default function Home() {
                             <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
                             <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
                           </div>
-                          <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8", marginBottom: "6px" }}>2.2</span>
                         </div>
                         <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: chartInView ? `${(2.2 / 5) * 200}px` : "0px", background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", transition: "height 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }} />
                         <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
@@ -397,7 +398,6 @@ export default function Home() {
                             <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
                             <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
                           </div>
-                          <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a", marginBottom: "6px" }}>4.0</span>
                         </div>
                         <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: chartInView ? `${(4.0 / 5) * 200}px` : "0px", background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", transition: "height 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
                         <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
@@ -407,17 +407,18 @@ export default function Home() {
                     {/* X-axis baseline */}
                     <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px" }} />
                   </div>
+                  </div>
                 </div>
 
                 {/* Chart Legend */}
                 <div className="chart-legend">
                   <div className="legend-item">
-                    <span className="legend-color-dot bg-purple"></span>
-                    <span className="legend-text">With Booster</span>
-                  </div>
-                  <div className="legend-item">
                     <span className="legend-color-dot bg-grey"></span>
                     <span className="legend-text">With FBS</span>
+                  </div>
+                  <div className="legend-item">
+                    <span className="legend-color-dot bg-purple"></span>
+                    <span className="legend-text">With Booster</span>
                   </div>
                 </div>
 

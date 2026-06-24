@@ -101,7 +101,7 @@ export default function Tech() {
           <Reveal style={{ textAlign: "center", marginBottom: "60px" }}>
             <span style={{ color: "var(--accent-red)", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.9rem" }}>Process Workflow</span>
             <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)", fontWeight: 800, color: "var(--brand-primary)", marginTop: "10px" }}>
-              Streamlined 3-Step Booster Production
+              Streamlined Three-Step Booster Production
             </h2>
           </Reveal>
 
@@ -467,9 +467,12 @@ export default function Tech() {
             {/* SVG Bar Chart */}
             <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", borderRadius: "24px", padding: "40px", boxShadow: "0 20px 40px rgba(0,0,0,0.02)" }}>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--brand-primary)", marginBottom: "4px" }}>HEK293T</h3>
-              <p style={{ color: "var(--brand-light)", fontSize: "0.85rem", marginBottom: "32px" }}>Cell density (×10⁶ cells/mL) after 72 hours</p>
 
-              <div ref={chartRef} style={{ position: "relative", height: "280px", marginLeft: "48px", marginBottom: "56px" }}>
+              <div style={{ display: "flex", alignItems: "stretch", marginTop: "32px" }}>
+                <div style={{ writingMode: "vertical-lr", transform: "rotate(180deg)", fontSize: "0.7rem", color: "var(--brand-light)", fontWeight: 600, textAlign: "center", marginRight: "4px", paddingBottom: "56px" }}>
+                  Normalized Cell Counts
+                </div>
+              <div ref={chartRef} style={{ position: "relative", height: "280px", flex: 1, marginLeft: "48px", marginBottom: "56px" }}>
                 {/* Y-axis labels */}
                 {[0, 1, 2, 3, 4, 5].map(v => (
                   <div key={v} style={{ position: "absolute", left: "-48px", bottom: `${(v / 5) * 200}px`, width: "40px", textAlign: "right", fontSize: "0.75rem", color: "var(--brand-light)", fontWeight: 600, lineHeight: 1, transform: "translateY(50%)" }}>
@@ -491,7 +494,6 @@ export default function Tech() {
                         <div style={{ width: "1px", height: "18px", background: "#94a3b8" }} />
                         <div style={{ width: "16px", height: "1px", background: "#94a3b8" }} />
                       </div>
-                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#94a3b8", marginBottom: "6px" }}>2.2</span>
                     </div>
                     <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: chartInView ? `${(2.2 / 5) * 200}px` : "0px", background: "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)", borderRadius: "8px 8px 0 0", transition: "height 0.8s cubic-bezier(0.16, 1, 0.3, 1)" }} />
                     <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#64748b" }}>FBS</span>
@@ -506,7 +508,6 @@ export default function Tech() {
                         <div style={{ width: "1px", height: "18px", background: "#3b2e9a" }} />
                         <div style={{ width: "16px", height: "1px", background: "#3b2e9a" }} />
                       </div>
-                      <span style={{ fontSize: "1.1rem", fontWeight: 800, color: "#3b2e9a", marginBottom: "6px" }}>4.0</span>
                     </div>
                     <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "80px", height: chartInView ? `${(4.0 / 5) * 200}px` : "0px", background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", borderRadius: "8px 8px 0 0", transition: "height 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s", boxShadow: "0 8px 24px rgba(59,46,154,0.25)" }} />
                     <span style={{ position: "absolute", bottom: "-32px", left: "50%", transform: "translateX(-50%)", fontSize: "0.85rem", fontWeight: 700, color: "#3b2e9a" }}>Booster</span>
@@ -516,12 +517,13 @@ export default function Tech() {
                 {/* X-axis baseline */}
                 <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "2px", background: "rgba(0,0,0,0.1)", borderRadius: "1px" }} />
               </div>
+              </div>
 
               <div style={{ display: "flex", alignItems: "center", gap: "8px", marginLeft: "48px" }}>
-                <div style={{ width: "12px", height: "12px", borderRadius: "3px", background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)" }} />
-                <span style={{ fontSize: "0.8rem", color: "var(--brand-light)", fontWeight: 600 }}>Booster</span>
-                <div style={{ width: "12px", height: "12px", borderRadius: "3px", background: "#94a3b8", marginLeft: "12px" }} />
+                <div style={{ width: "12px", height: "12px", borderRadius: "3px", background: "#94a3b8" }} />
                 <span style={{ fontSize: "0.8rem", color: "var(--brand-light)", fontWeight: 600 }}>FBS</span>
+                <div style={{ width: "12px", height: "12px", borderRadius: "3px", background: "linear-gradient(180deg, #5b46c4 0%, #3b2e9a 100%)", marginLeft: "12px" }} />
+                <span style={{ fontSize: "0.8rem", color: "var(--brand-light)", fontWeight: 600 }}>Booster</span>
               </div>
             </div>
 
@@ -529,7 +531,7 @@ export default function Tech() {
             <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
               <div style={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.06)", padding: "30px", borderRadius: "20px", boxShadow: "0 8px 24px rgba(0,0,0,0.02)" }}>
                 <div style={{ fontSize: "2.8rem", fontWeight: 800, color: "#3b2e9a", lineHeight: 1 }}>~1.8×</div>
-                <div style={{ fontWeight: 700, color: "var(--brand-primary)", marginTop: "8px", fontSize: "1rem" }}>Higher cell density</div>
+                <div style={{ fontWeight: 700, color: "var(--brand-primary)", marginTop: "8px", fontSize: "1rem" }}>Increased Cell Growth</div>
                 <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", marginTop: "6px", lineHeight: "1.5" }}>
                   Booster-treated HEK293T cells reach nearly double the density of FBS-treated cultures under identical conditions.
                 </p>
@@ -544,7 +546,7 @@ export default function Tech() {
               <div style={{ background: "rgba(59,46,154,0.04)", border: "1px solid rgba(59,46,154,0.1)", padding: "20px 24px", borderRadius: "16px", display: "flex", gap: "14px", alignItems: "flex-start" }}>
                 <span style={{ fontSize: "1.4rem" }}>🔬</span>
                 <p style={{ color: "var(--brand-light)", fontSize: "0.9rem", lineHeight: "1.55", margin: 0 }}>
-                  Data generated in-house under standardised culture conditions. Results are representative of ≥3 independent experiments.
+                  Data generated in-house under standardised culture conditions. Results are representative of ≥3 independent replicates.
                 </p>
               </div>
             </div>
