@@ -121,6 +121,13 @@ export default function About() {
 
   const recognitions = [
     {
+      title: "Cellivate Technologies Raises Eyebrows as It Secures Hefty Funding in Final Round at Big Spark",
+      link: "https://www.channelnewsasia.com/brandstudio/cellivate-technologies-raises-eyebrows-it-secures-hefty-funding-final-round-big-spark-4214561",
+      date: "June 2026",
+      excerpt: "Published by Channel News Asia",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Channel_NewsAsia_logo.svg/1200px-Channel_NewsAsia_logo.svg.png"
+    },
+    {
       title: "Cellular Engineering Skin to make Leather: A New Sustainability Goal?",
       link: "https://technode.global/2023/05/18/cellular-engineering-skin-to-make-leather-a-new-sustainability-goal/",
       date: "May 18, 2023",
