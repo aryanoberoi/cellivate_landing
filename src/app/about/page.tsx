@@ -123,9 +123,9 @@ export default function About() {
     {
       title: "Cellivate Technologies Raises Eyebrows as It Secures Hefty Funding in Final Round at Big Spark",
       link: "https://www.channelnewsasia.com/brandstudio/cellivate-technologies-raises-eyebrows-it-secures-hefty-funding-final-round-big-spark-4214561",
-      date: "June 2026",
+      date: "March 2024",
       excerpt: "Published by Channel News Asia",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Channel_NewsAsia_logo.svg/1200px-Channel_NewsAsia_logo.svg.png"
+      image: "/hf_20260523_061624_901e0d94-0352-4796-b721-b3c590f3f4db.png"
     },
     {
       title: "Cellular Engineering Skin to make Leather: A New Sustainability Goal?",
