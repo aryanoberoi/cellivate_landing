@@ -18,12 +18,79 @@ const inter = Inter({
   display: "swap",
 });
 
+const BASE_URL = "https://cellivate.co";
+
 export const metadata: Metadata = {
-  title: "Cellivate Technologies | Fetal Bovine Serum Alternatives",
-  description: "Revolutionising cell-based solutions for a sustainable future with BOOSTER platform technology and EV-based biological inputs.",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "Cellivate Technologies | Animal-Free FBS Alternative for Cell Culture",
+    template: "%s | Cellivate Technologies",
+  },
+  description:
+    "Cellivate's BOOSTER is a serum-free, animal-free FBS alternative powered by extracellular vesicles (EVs) — delivering superior cell growth, consistency, and sustainability for biotech, cultivated meat, and regenerative medicine.",
+  keywords: [
+    "FBS alternative",
+    "fetal bovine serum alternative",
+    "serum-free cell culture",
+    "animal-free cell culture media",
+    "extracellular vesicles cell culture",
+    "EV cell culture supplement",
+    "BOOSTER cell growth supplement",
+    "Cellivate Technologies",
+    "cell culture Singapore",
+    "cultivated meat cell culture",
+    "cell-based solutions",
+    "sustainable biotech",
+    "regenerative medicine media",
+    "cell culture media supplement",
+    "xeno-free cell culture",
+  ],
+  authors: [{ name: "Cellivate Technologies", url: BASE_URL }],
+  creator: "Cellivate Technologies",
+  publisher: "Cellivate Technologies",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_SG",
+    url: BASE_URL,
+    siteName: "Cellivate Technologies",
+    title: "Cellivate Technologies | Animal-Free FBS Alternative for Cell Culture",
+    description:
+      "BOOSTER by Cellivate — an EV-based, serum-free replacement for fetal bovine serum (FBS). Better cell growth. No animals. Designed for biotech labs, cultivated meat, and regenerative medicine.",
+    images: [
+      {
+        url: "/biotech_lab.png",
+        width: 1200,
+        height: 630,
+        alt: "Cellivate Technologies BOOSTER – Animal-Free Cell Culture Supplement",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cellivate Technologies | Animal-Free FBS Alternative for Cell Culture",
+    description:
+      "BOOSTER by Cellivate — EV-based serum-free alternative to FBS for superior cell growth without animals.",
+    images: ["/biotech_lab.png"],
+    creator: "@cellivate",
+  },
+  alternates: {
+    canonical: BASE_URL,
+  },
   icons: {
     icon: "/favicon.ico",
   },
+  category: "biotechnology",
 };
 
 export default function RootLayout({
@@ -34,6 +101,77 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
       <body style={{ background: "var(--bg-main)", color: "var(--brand-dark)" }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": `${BASE_URL}/#organization`,
+                  name: "Cellivate Technologies",
+                  url: BASE_URL,
+                  logo: {
+                    "@type": "ImageObject",
+                    url: `${BASE_URL}/favicon.ico`,
+                  },
+                  description:
+                    "Cellivate Technologies develops animal-free, EV-based cell culture supplements as a superior replacement for fetal bovine serum (FBS).",
+                  foundingDate: "2020",
+                  foundingLocation: "Singapore",
+                  areaServed: "Worldwide",
+                  email: "admin@cellivatetech.com",
+                  address: [
+                    {
+                      "@type": "PostalAddress",
+                      addressLocality: "Singapore",
+                      streetAddress: "160 Robinson Rd, #14-04",
+                      postalCode: "068914",
+                      addressCountry: "SG",
+                    },
+                  ],
+                  sameAs: [
+                    "https://www.linkedin.com/company/cellivate-technologies/",
+                  ],
+                },
+                {
+                  "@type": "Product",
+                  "@id": `${BASE_URL}/#booster`,
+                  name: "BOOSTER by Cellivate",
+                  description:
+                    "An extracellular vesicle (EV)-based, serum-free, animal-free alternative to fetal bovine serum (FBS) for advanced cell culture applications including cultivated meat, regenerative medicine, and industrial biotech.",
+                  brand: {
+                    "@type": "Brand",
+                    name: "Cellivate Technologies",
+                  },
+                  manufacturer: {
+                    "@id": `${BASE_URL}/#organization`,
+                  },
+                  category: "Cell Culture Supplement",
+                  url: `${BASE_URL}/tech`,
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${BASE_URL}/#website`,
+                  url: BASE_URL,
+                  name: "Cellivate Technologies",
+                  publisher: {
+                    "@id": `${BASE_URL}/#organization`,
+                  },
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate: `${BASE_URL}/?q={search_term_string}`,
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
         {/* Navigation Header */}
         <header className="header-nav" style={{ background: "rgba(250, 248, 245, 0.8)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(0,0,0,0.05)", position: "fixed", top: 0, left: 0, width: "100%", zIndex: 1000, height: "80px", display: "flex", alignItems: "center" }}>
           <div className="nav-container" style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
